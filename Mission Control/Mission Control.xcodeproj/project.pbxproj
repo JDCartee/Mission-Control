@@ -29,6 +29,12 @@
 		DF0C358C193526DE008B004B /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358A193526DE008B004B /* MCActionStore.m */; };
 		DF0C358F19352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
 		DF0C359019352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
+		DF0C3598193543A7008B004B /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3595193543A7008B004B /* ConnectionManager.m */; };
+		DF0C3599193543A7008B004B /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3595193543A7008B004B /* ConnectionManager.m */; };
+		DF0C359A193543A7008B004B /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3597193543A7008B004B /* WebServiceInterface.m */; };
+		DF0C359B193543A7008B004B /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3597193543A7008B004B /* WebServiceInterface.m */; };
+		DF0C359F193548E6008B004B /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C359E193548E6008B004B /* MCWebServiceInterface.m */; };
+		DF0C35A0193548E6008B004B /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C359E193548E6008B004B /* MCWebServiceInterface.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,12 @@
 		DF0C358A193526DE008B004B /* MCActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCActionStore.m; path = Model/MCActionStore/MCActionStore.m; sourceTree = "<group>"; };
 		DF0C358D19352823008B004B /* MCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAction.h; path = Model/MCAction/MCAction.h; sourceTree = "<group>"; };
 		DF0C358E19352823008B004B /* MCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAction.m; path = Model/MCAction/MCAction.m; sourceTree = "<group>"; };
+		DF0C3594193543A7008B004B /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		DF0C3595193543A7008B004B /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		DF0C3596193543A7008B004B /* WebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceInterface.h; sourceTree = "<group>"; };
+		DF0C3597193543A7008B004B /* WebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceInterface.m; sourceTree = "<group>"; };
+		DF0C359D193548E6008B004B /* MCWebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCWebServiceInterface.h; path = General/MCWebServiceInterface/MCWebServiceInterface.h; sourceTree = "<group>"; };
+		DF0C359E193548E6008B004B /* MCWebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCWebServiceInterface.m; path = General/MCWebServiceInterface/MCWebServiceInterface.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +138,7 @@
 		DF0C3549193425CF008B004B /* Mission Control */ = {
 			isa = PBXGroup;
 			children = (
+				DF0C359119354394008B004B /* General */,
 				DF0C358619352698008B004B /* Model */,
 				DF0C35741934E689008B004B /* View Controllers */,
 				DF0C3552193425CF008B004B /* MCAppDelegate.h */,
@@ -218,6 +231,44 @@
 				DF0C358E19352823008B004B /* MCAction.m */,
 			);
 			name = MCAction;
+			sourceTree = "<group>";
+		};
+		DF0C359119354394008B004B /* General */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C359C19354870008B004B /* MCWebServiceInterface */,
+				DF0C3592193543A7008B004B /* WebServiceInterface */,
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		DF0C3592193543A7008B004B /* WebServiceInterface */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C3593193543A7008B004B /* ConnectionManager */,
+				DF0C3596193543A7008B004B /* WebServiceInterface.h */,
+				DF0C3597193543A7008B004B /* WebServiceInterface.m */,
+			);
+			name = WebServiceInterface;
+			path = General/WebServiceInterface;
+			sourceTree = "<group>";
+		};
+		DF0C3593193543A7008B004B /* ConnectionManager */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C3594193543A7008B004B /* ConnectionManager.h */,
+				DF0C3595193543A7008B004B /* ConnectionManager.m */,
+			);
+			path = ConnectionManager;
+			sourceTree = "<group>";
+		};
+		DF0C359C19354870008B004B /* MCWebServiceInterface */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C359D193548E6008B004B /* MCWebServiceInterface.h */,
+				DF0C359E193548E6008B004B /* MCWebServiceInterface.m */,
+			);
+			name = MCWebServiceInterface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,12 +369,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0C359A193543A7008B004B /* WebServiceInterface.m in Sources */,
 				DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */,
 				DF0C358F19352823008B004B /* MCAction.m in Sources */,
 				DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */,
 				DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */,
 				DF0C358B193526DE008B004B /* MCActionStore.m in Sources */,
+				DF0C3598193543A7008B004B /* ConnectionManager.m in Sources */,
 				DF0C3550193425CF008B004B /* main.m in Sources */,
+				DF0C359F193548E6008B004B /* MCWebServiceInterface.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +387,10 @@
 			files = (
 				DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */,
 				DF0C358C193526DE008B004B /* MCActionStore.m in Sources */,
+				DF0C35A0193548E6008B004B /* MCWebServiceInterface.m in Sources */,
 				DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */,
+				DF0C359B193543A7008B004B /* WebServiceInterface.m in Sources */,
+				DF0C3599193543A7008B004B /* ConnectionManager.m in Sources */,
 				DF0C359019352823008B004B /* MCAction.m in Sources */,
 				DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */,
 			);
