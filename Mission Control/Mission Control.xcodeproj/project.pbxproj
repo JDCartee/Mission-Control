@@ -23,6 +23,8 @@
 		DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C35771934E6E5008B004B /* MCRootViewController.m */; };
 		DF0C357B1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
 		DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
+		DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
+		DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		DF0C35761934E6E5008B004B /* MCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCRootViewController.h; path = "View Controllers/MCRootViewController/MCRootViewController.h"; sourceTree = "<group>"; };
 		DF0C35771934E6E5008B004B /* MCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCRootViewController.m; path = "View Controllers/MCRootViewController/MCRootViewController.m"; sourceTree = "<group>"; };
 		DF0C35781934E6E5008B004B /* MCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCRootViewController.xib; path = "View Controllers/MCRootViewController/MCRootViewController.xib"; sourceTree = "<group>"; };
+		DF0C3582193510A3008B004B /* MCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSettingsViewController.h; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.h"; sourceTree = "<group>"; };
+		DF0C3583193510A3008B004B /* MCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSettingsViewController.m; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +159,7 @@
 		DF0C35741934E689008B004B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF0C35811935106E008B004B /* MCSettingsViewController */,
 				DF0C35751934E6AA008B004B /* MCRootViewController */,
 			);
 			name = "View Controllers";
@@ -168,6 +173,15 @@
 				DF0C35781934E6E5008B004B /* MCRootViewController.xib */,
 			);
 			name = MCRootViewController;
+			sourceTree = "<group>";
+		};
+		DF0C35811935106E008B004B /* MCSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C3582193510A3008B004B /* MCSettingsViewController.h */,
+				DF0C3583193510A3008B004B /* MCSettingsViewController.m */,
+			);
+			name = MCSettingsViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */,
+				DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */,
 				DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */,
 				DF0C3550193425CF008B004B /* main.m in Sources */,
 			);
@@ -279,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */,
+				DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */,
 				DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

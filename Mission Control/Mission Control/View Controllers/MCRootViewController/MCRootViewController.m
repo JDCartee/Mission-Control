@@ -7,6 +7,7 @@
 //
 
 #import "MCRootViewController.h"
+#import "MCSettingsViewController.h"
 
 const float navigationItemSettingsButtonWidth =                 30.0f;
 const float navigationItemSettingsButtonHeight =                30.0f;
@@ -93,6 +94,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (void)openSettings
 {
+    MCSettingsViewController *settings;
+    settings = [[MCSettingsViewController alloc] initWithStyle:UITableViewStylePlain];
     
+    [self.navigationController pushViewController:settings
+                                         animated:YES];
 }
 @end
