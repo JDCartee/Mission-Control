@@ -8,12 +8,18 @@
 
 #import "MCRootViewController.h"
 #import "MCSettingsViewController.h"
+#import "MCActionStore.h"
 
 const float navigationItemSettingsButtonWidth =                 30.0f;
 const float navigationItemSettingsButtonHeight =                30.0f;
 const float navigationItemSettingsButtonFontSize =              36.0f;
 
 @interface MCRootViewController ()
+
+@property (nonatomic, strong) MCActionStore *actionStore;
+// Making this weak because the store singleton will ultimately retain this object.
+// No need to own it here.
+@property (nonatomic, weak) MCAction *currentActionFromStore;
 
 @end
 
@@ -24,8 +30,9 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 {
     self = [super initWithNibName:nibNameOrNil
                            bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (self)
+    {
+        self.actionStore = [MCActionStore defaultStore];
     }
     return self;
 }
@@ -34,12 +41,8 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 {
     [super viewDidLoad];
     [self setupNavBarButtons];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self setupCurrentAction];
+    [self setupActionSlider];
 }
 
 #pragma mark IBActions
@@ -100,4 +103,55 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.navigationController pushViewController:settings
                                          animated:YES];
 }
+
+#pragma Current Action
+
+- (void)setupCurrentAction
+{
+    NSString *value;
+    self.currentActionFromStore = self.actionStore.currentAction;
+    if (self.currentActionFromStore)
+    {
+        value = self.currentActionFromStore.urlParameterValue;
+        if (value)
+        {
+            NSString *valueLabelString = [NSString stringWithFormat:@"Value: %@",
+                                          value];
+            [self.actionValueSliderTitleLabel setText:valueLabelString];
+            [self.actionValueSlider setValue:value.floatValue
+                                    animated:YES];
+        }
+        else
+        {
+            [self updateActionValue];
+        }
+        [self.currentActionTitleLabel setText:self.currentActionFromStore.title];
+        [self.currentActionLabel setText:self.currentActionFromStore.baseURL];
+    }
+    else
+    {
+        [self updateActionValue];
+    }
+}
+
+#pragma mark Slider
+
+- (void)setupActionSlider
+{
+    [self.actionValueSlider addTarget:self
+                               action:@selector(updateActionValue)
+                     forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)updateActionValue
+{
+    NSString *valueString = [NSString stringWithFormat:@"%d",
+                             (int)self.actionValueSlider.value];
+    NSString *valueLabelString = [NSString stringWithFormat:@"Value: %@",
+                                  valueString];
+    
+    [self.currentActionFromStore setUrlParameterValue:valueString];
+    [self.actionValueSliderTitleLabel setText:valueLabelString];
+}
+
 @end

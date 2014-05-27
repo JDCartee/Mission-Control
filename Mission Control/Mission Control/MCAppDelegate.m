@@ -9,18 +9,35 @@
 #import "MCAppDelegate.h"
 #import "MCRootViewController.h"
 
+// To be removed. I'm putting this here for now to start with a hard coded default action
+// before I get the persistent data store created.
+#import "MCActionStore.h"
+#import "MCAction.h"
+//
+
+
 @implementation MCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Temporary code to create a default action. To be removed when the persistent data
+    // store is created
+    MCActionStore *store = [MCActionStore defaultStore];
+    MCAction *defaultAction;
+    defaultAction = [[MCAction alloc] initWithBaseURL:@"http://192.168.1.5/index_param.php"
+                                        withParameter:@"key"
+                                              ofTitle:@"Raspberry Pi"];
+    [defaultAction setUrlParameterValue:@"20"];
+    [store setCurrentAction:defaultAction];
+    //
+    
     MCRootViewController *rootViewController;
     rootViewController = [[MCRootViewController alloc] initWithNibName:nil
                                                                 bundle:nil];
     UINavigationController *nav;
     nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [self.window setRootViewController:nav];
     [self.window setBackgroundColor:[UIColor whiteColor]];

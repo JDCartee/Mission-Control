@@ -25,6 +25,10 @@
 		DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
 		DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
 		DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
+		DF0C358B193526DE008B004B /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358A193526DE008B004B /* MCActionStore.m */; };
+		DF0C358C193526DE008B004B /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358A193526DE008B004B /* MCActionStore.m */; };
+		DF0C358F19352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
+		DF0C359019352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		DF0C35781934E6E5008B004B /* MCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCRootViewController.xib; path = "View Controllers/MCRootViewController/MCRootViewController.xib"; sourceTree = "<group>"; };
 		DF0C3582193510A3008B004B /* MCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSettingsViewController.h; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.h"; sourceTree = "<group>"; };
 		DF0C3583193510A3008B004B /* MCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSettingsViewController.m; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.m"; sourceTree = "<group>"; };
+		DF0C3589193526DE008B004B /* MCActionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCActionStore.h; path = Model/MCActionStore/MCActionStore.h; sourceTree = "<group>"; };
+		DF0C358A193526DE008B004B /* MCActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCActionStore.m; path = Model/MCActionStore/MCActionStore.m; sourceTree = "<group>"; };
+		DF0C358D19352823008B004B /* MCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAction.h; path = Model/MCAction/MCAction.h; sourceTree = "<group>"; };
+		DF0C358E19352823008B004B /* MCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAction.m; path = Model/MCAction/MCAction.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +126,7 @@
 		DF0C3549193425CF008B004B /* Mission Control */ = {
 			isa = PBXGroup;
 			children = (
+				DF0C358619352698008B004B /* Model */,
 				DF0C35741934E689008B004B /* View Controllers */,
 				DF0C3552193425CF008B004B /* MCAppDelegate.h */,
 				DF0C3553193425CF008B004B /* MCAppDelegate.m */,
@@ -182,6 +191,33 @@
 				DF0C3583193510A3008B004B /* MCSettingsViewController.m */,
 			);
 			name = MCSettingsViewController;
+			sourceTree = "<group>";
+		};
+		DF0C358619352698008B004B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C3588193526AF008B004B /* MCAction */,
+				DF0C3587193526A0008B004B /* MCActionStore */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		DF0C3587193526A0008B004B /* MCActionStore */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C3589193526DE008B004B /* MCActionStore.h */,
+				DF0C358A193526DE008B004B /* MCActionStore.m */,
+			);
+			name = MCActionStore;
+			sourceTree = "<group>";
+		};
+		DF0C3588193526AF008B004B /* MCAction */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C358D19352823008B004B /* MCAction.h */,
+				DF0C358E19352823008B004B /* MCAction.m */,
+			);
+			name = MCAction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,8 +319,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */,
+				DF0C358F19352823008B004B /* MCAction.m in Sources */,
 				DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */,
 				DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */,
+				DF0C358B193526DE008B004B /* MCActionStore.m in Sources */,
 				DF0C3550193425CF008B004B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,7 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */,
+				DF0C358C193526DE008B004B /* MCActionStore.m in Sources */,
 				DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */,
+				DF0C359019352823008B004B /* MCAction.m in Sources */,
 				DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
