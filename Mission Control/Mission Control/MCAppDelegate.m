@@ -7,14 +7,23 @@
 //
 
 #import "MCAppDelegate.h"
+#import "MCRootViewController.h"
 
 @implementation MCAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    MCRootViewController *rootViewController;
+    rootViewController = [[MCRootViewController alloc] initWithNibName:nil
+                                                                bundle:nil];
+    UINavigationController *nav;
+    nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [self.window setRootViewController:nav];
+    [self.window setBackgroundColor:[UIColor whiteColor]];
     [self.window makeKeyAndVisible];
     return YES;
 }

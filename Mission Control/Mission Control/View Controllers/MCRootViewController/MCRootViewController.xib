@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MCRootViewController">
+            <connections>
+                <outlet property="actionContainerView" destination="bQA-hx-a4P" id="FTp-MG-IPm"/>
+                <outlet property="actionValueSlider" destination="Io2-VS-eCM" id="H2n-Bi-ri9"/>
+                <outlet property="actionValueSliderTitleLabel" destination="eDh-DN-sy3" id="M9P-m3-KCJ"/>
+                <outlet property="currentActionLabel" destination="1Wv-BH-i91" id="fxf-7B-peM"/>
+                <outlet property="currentActionTitleLabel" destination="yjo-KM-BUb" id="9dX-zb-yNs"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CVH-l4-4XB">
+                    <rect key="frame" x="20" y="518" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Engage">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="submitButton:" destination="-1" eventType="touchUpInside" id="hhi-Tw-nAG"/>
+                    </connections>
+                </button>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Wv-BH-i91">
+                    <rect key="frame" x="20" y="106" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Action:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjo-KM-BUb">
+                    <rect key="frame" x="20" y="77" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Io2-VS-eCM">
+                    <rect key="frame" x="18" y="480" width="284" height="31"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </slider>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Action Value:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-DN-sy3">
+                    <rect key="frame" x="20" y="451" width="280" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lLf-52-A1A">
+                    <rect key="frame" x="20" y="135" width="280" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Choose an Action">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseAnActionButton:" destination="-1" eventType="touchUpInside" id="1aN-NO-uny"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQA-hx-a4P">
+                    <rect key="frame" x="20" y="173" width="280" height="270"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="CVH-l4-4XB" secondAttribute="bottom" constant="20" symbolic="YES" id="3Lw-at-lkF"/>
+                <constraint firstItem="lLf-52-A1A" firstAttribute="leading" secondItem="1Wv-BH-i91" secondAttribute="leading" id="9yo-tk-Fhs"/>
+                <constraint firstItem="Io2-VS-eCM" firstAttribute="leading" secondItem="eDh-DN-sy3" secondAttribute="leading" id="B6u-tr-uhs"/>
+                <constraint firstItem="lLf-52-A1A" firstAttribute="top" secondItem="1Wv-BH-i91" secondAttribute="bottom" constant="8" symbolic="YES" id="EUv-hc-tcm"/>
+                <constraint firstItem="lLf-52-A1A" firstAttribute="leading" secondItem="bQA-hx-a4P" secondAttribute="leading" id="KOv-aS-Rbi"/>
+                <constraint firstItem="Io2-VS-eCM" firstAttribute="top" secondItem="eDh-DN-sy3" secondAttribute="bottom" constant="8" symbolic="YES" id="KPn-YI-iJc"/>
+                <constraint firstItem="1Wv-BH-i91" firstAttribute="leading" secondItem="yjo-KM-BUb" secondAttribute="leading" id="OfJ-MC-L5U"/>
+                <constraint firstItem="eDh-DN-sy3" firstAttribute="top" secondItem="bQA-hx-a4P" secondAttribute="bottom" constant="8" symbolic="YES" id="Qgp-CR-wHl"/>
+                <constraint firstItem="Io2-VS-eCM" firstAttribute="leading" secondItem="CVH-l4-4XB" secondAttribute="leading" id="SaM-ze-Fvx"/>
+                <constraint firstItem="eDh-DN-sy3" firstAttribute="trailing" secondItem="Io2-VS-eCM" secondAttribute="trailing" id="TKX-lR-8aR"/>
+                <constraint firstItem="1Wv-BH-i91" firstAttribute="trailing" secondItem="lLf-52-A1A" secondAttribute="trailing" id="U85-GD-PfP"/>
+                <constraint firstItem="yjo-KM-BUb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" symbolic="YES" id="WYi-Tb-Pch"/>
+                <constraint firstItem="yjo-KM-BUb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="77" id="YAS-bS-kXE"/>
+                <constraint firstItem="eDh-DN-sy3" firstAttribute="trailing" secondItem="bQA-hx-a4P" secondAttribute="trailing" id="YkT-ea-kAS"/>
+                <constraint firstItem="bQA-hx-a4P" firstAttribute="trailing" secondItem="lLf-52-A1A" secondAttribute="trailing" id="dNA-gz-BBS"/>
+                <constraint firstItem="eDh-DN-sy3" firstAttribute="leading" secondItem="bQA-hx-a4P" secondAttribute="leading" id="fgB-l6-t2n"/>
+                <constraint firstAttribute="trailing" secondItem="yjo-KM-BUb" secondAttribute="trailing" constant="20" symbolic="YES" id="lRA-Ss-kIz"/>
+                <constraint firstItem="Io2-VS-eCM" firstAttribute="trailing" secondItem="CVH-l4-4XB" secondAttribute="trailing" id="mkG-6y-fT9"/>
+                <constraint firstItem="yjo-KM-BUb" firstAttribute="trailing" secondItem="1Wv-BH-i91" secondAttribute="trailing" id="p16-m5-a2G"/>
+                <constraint firstItem="1Wv-BH-i91" firstAttribute="top" secondItem="yjo-KM-BUb" secondAttribute="bottom" constant="8" symbolic="YES" id="q0Q-6Y-UnY"/>
+                <constraint firstItem="CVH-l4-4XB" firstAttribute="top" secondItem="Io2-VS-eCM" secondAttribute="bottom" constant="8" symbolic="YES" id="r6Q-Qa-Vaa"/>
+                <constraint firstItem="bQA-hx-a4P" firstAttribute="top" secondItem="lLf-52-A1A" secondAttribute="bottom" constant="8" symbolic="YES" id="s0h-M5-qWf"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>

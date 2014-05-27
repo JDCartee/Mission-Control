@@ -19,6 +19,10 @@
 		DF0C355F193425CF008B004B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3547193425CF008B004B /* UIKit.framework */; };
 		DF0C3567193425CF008B004B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF0C3565193425CF008B004B /* InfoPlist.strings */; };
 		DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3568193425CF008B004B /* Mission_ControlTests.m */; };
+		DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C35771934E6E5008B004B /* MCRootViewController.m */; };
+		DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C35771934E6E5008B004B /* MCRootViewController.m */; };
+		DF0C357B1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
+		DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +52,9 @@
 		DF0C3564193425CF008B004B /* Mission ControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mission ControlTests-Info.plist"; sourceTree = "<group>"; };
 		DF0C3566193425CF008B004B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DF0C3568193425CF008B004B /* Mission_ControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mission_ControlTests.m; sourceTree = "<group>"; };
+		DF0C35761934E6E5008B004B /* MCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCRootViewController.h; path = "View Controllers/MCRootViewController/MCRootViewController.h"; sourceTree = "<group>"; };
+		DF0C35771934E6E5008B004B /* MCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCRootViewController.m; path = "View Controllers/MCRootViewController/MCRootViewController.m"; sourceTree = "<group>"; };
+		DF0C35781934E6E5008B004B /* MCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCRootViewController.xib; path = "View Controllers/MCRootViewController/MCRootViewController.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +114,7 @@
 		DF0C3549193425CF008B004B /* Mission Control */ = {
 			isa = PBXGroup;
 			children = (
+				DF0C35741934E689008B004B /* View Controllers */,
 				DF0C3552193425CF008B004B /* MCAppDelegate.h */,
 				DF0C3553193425CF008B004B /* MCAppDelegate.m */,
 				DF0C3555193425CF008B004B /* Images.xcassets */,
@@ -142,6 +150,24 @@
 				DF0C3565193425CF008B004B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DF0C35741934E689008B004B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C35751934E6AA008B004B /* MCRootViewController */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DF0C35751934E6AA008B004B /* MCRootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF0C35761934E6E5008B004B /* MCRootViewController.h */,
+				DF0C35771934E6E5008B004B /* MCRootViewController.m */,
+				DF0C35781934E6E5008B004B /* MCRootViewController.xib */,
+			);
+			name = MCRootViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0C357B1934E6E5008B004B /* MCRootViewController.xib in Resources */,
 				DF0C354E193425CF008B004B /* InfoPlist.strings in Resources */,
 				DF0C3556193425CF008B004B /* Images.xcassets in Resources */,
 			);
@@ -229,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */,
 				DF0C3567193425CF008B004B /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */,
+				DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */,
 				DF0C3550193425CF008B004B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */,
 				DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
