@@ -9,6 +9,8 @@
 #import "MCRootViewController.h"
 #import "MCSettingsViewController.h"
 #import "MCActionStore.h"
+#import "MCWebServiceInterface.h"
+#import "ConnectionManager.h"
 
 const float navigationItemSettingsButtonWidth =                 30.0f;
 const float navigationItemSettingsButtonHeight =                30.0f;
@@ -20,6 +22,8 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 // Making this weak because the store singleton will ultimately retain this object.
 // No need to own it here.
 @property (nonatomic, weak) MCAction *currentActionFromStore;
+@property (nonatomic, strong) MCWebServiceInterface *webService;
+@property (nonatomic, strong) UIWebView *responseWebView;
 
 @end
 
@@ -43,12 +47,23 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self setupNavBarButtons];
     [self setupCurrentAction];
     [self setupActionSlider];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self setupResponseTextView];
 }
 
 #pragma mark IBActions
 
 - (IBAction)submitButton:(id)sender
 {
+    [self.responseWebView loadHTMLString:nil
+                                 baseURL:nil];
+    [self.actionStore networkActivityIndicatorShow];
+    [self.submitButton setEnabled:NO];
+    [self.webService submitAction:self.currentActionFromStore];
 }
 
 - (IBAction)chooseAnActionButton:(id)sender
@@ -108,6 +123,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (void)setupCurrentAction
 {
+    self.webService = nil;
     NSString *value;
     self.currentActionFromStore = self.actionStore.currentAction;
     if (self.currentActionFromStore)
@@ -132,6 +148,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     {
         [self updateActionValue];
     }
+    
+    NSString *baseURL = self.currentActionFromStore.baseURL;
+    self.webService = [[MCWebServiceInterface alloc] initWithURL:baseURL];
+    [self.webService setDelegate:self];
+
 }
 
 #pragma mark Slider
@@ -152,6 +173,34 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     
     [self.currentActionFromStore setUrlParameterValue:valueString];
     [self.actionValueSliderTitleLabel setText:valueLabelString];
+}
+
+#pragma mark Response Text View
+
+- (void)setupResponseTextView
+{
+    CGRect webViewFrame = CGRectMake(0,
+                                     0,
+                                     self.actionContainerView.frame.size.width,
+                                     self.actionContainerView.frame.size.height);
+    self.responseWebView = [[UIWebView alloc] initWithFrame:webViewFrame];
+    [self.actionContainerView addSubview:self.responseWebView];
+}
+
+#pragma mark MCWebServicceInterface Delegate
+
+- (void)returnData:(id)data
+{
+    if (data)
+    {
+        ConnectionManager *conn = data;
+        NSString *returnData;
+        returnData = [[[NSString alloc] initWithData:conn.returnData encoding:NSASCIIStringEncoding] copy];
+        [self.responseWebView loadHTMLString:returnData baseURL:[NSURL URLWithString:self.currentActionFromStore.baseURL]];
+    }
+    [self setupCurrentAction];
+    [self.actionStore networkActivityIndicatorHide];
+    [self.submitButton setEnabled:YES];
 }
 
 @end

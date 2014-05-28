@@ -8,7 +8,19 @@
 
 #import <Foundation/Foundation.h>
 #import "WebServiceInterface.h"
+#import "MCAction.h"
+
+@protocol MCWebServiceInterfaceDelegate <NSObject>
+
+- (void)returnData:(id)data;
+
+@end
 
 @interface MCWebServiceInterface : WebServiceInterface
+
+@property (nonatomic, weak) id delegate;
+@property (nonatomic) BOOL waitingForResponse;
+
+- (void)submitAction:(MCAction *)action;
 
 @end

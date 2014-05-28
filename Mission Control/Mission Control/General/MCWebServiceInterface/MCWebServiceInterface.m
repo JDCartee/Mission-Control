@@ -13,22 +13,47 @@
 
 - (void)submitAction:(MCAction *)action
 {
-//    if (!_waitingForResponse)
-//    {
+    if (!self.waitingForResponse)
+    {
         NSString *parameterKey = action.urlParameterKey;
         NSString *parameterValue = action.urlParameterValue;
         NSString *stringToAppend;
         stringToAppend = [NSString stringWithFormat:@"?%@=%@",
                           parameterKey,
                           parameterValue];
-//        _waitingForResponse = YES;
+        [self setWaitingForResponse:YES];
     
 //        [delegate disableButtons];
+    
+        [self.connectionManager setConnectionTimeout:40.0];
         [self.connectionManager connectWithGetByAppendingToURL:stringToAppend];
-//    }
-//    else{
-//        NSLog(@"Piglow command already processing.");
-//    }
+    }
+    else
+    {
+        NSLog(@"Piglow command already processing.");
+    }
+}
+
+- (void)processReturnedData:(NSNotification *)notification
+{
+    self.waitingForResponse = NO;
+    NSLog(@"returned data from MCInterface");
+    if ([self.delegate respondsToSelector:@selector(returnData:)])
+    {
+        [self.delegate performSelector:@selector(returnData:)
+                            withObject:notification.object];
+    }
+}
+
+- (void)connectionError:(NSNotification *)notification
+{
+    NSLog(@"error from MCInterface");
+    self.waitingForResponse = NO;
+    if ([self.delegate respondsToSelector:@selector(returnData:)])
+    {
+        [self.delegate performSelector:@selector(returnData:)
+                            withObject:nil];
+    }
 }
 
 @end
