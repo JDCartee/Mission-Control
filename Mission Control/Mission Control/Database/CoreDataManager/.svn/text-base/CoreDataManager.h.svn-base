@@ -1,0 +1,40 @@
+//
+//  CoreDataManager.h
+//  FormsinMotion
+//
+//  Created by Jeremy Cartee on 11/29/12.
+//  Copyright (c) 2012 KeyMark Inc. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "FileHelpers.h"
+
+#define sortNone          0
+#define sortAscending     1
+#define sortDescending    2
+
+@interface CoreDataManager : NSObject
+//{
+//    NSPersistentStoreCoordinator *persistentStoreCoordinator;
+//}
+
+@property (nonatomic, strong) NSString *persistentStoreName;
+@property (readonly, nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (readonly, nonatomic, strong) NSManagedObjectModel *managedObjectModel;
+@property (readonly, nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
+- (NSArray *)fetchEntity:(NSString *)entityKey
+               sortOrder:(int)sort
+                 sortKey:(NSString *)sortKey;
+- (id)fetchObject:(NSString *)entityName
+        attribute:(NSString *)attribute
+            value:(NSString *)value;
+- (NSArray *)fetchObjects:(NSString *)entityName
+                attribute:(NSString *)attribute
+                    value:(NSString *)value;
+- (NSArray *)fetchObjects:(NSString *)entityName
+               Parameters:(NSMutableDictionary *)parameters;
+- (BOOL)saveChanges;
+
+@end

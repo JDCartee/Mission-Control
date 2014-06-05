@@ -24,13 +24,13 @@
     
     // Temporary code to create a default action. To be removed when the persistent data
     // store is created
-    MCActionStore *store = [MCActionStore defaultStore];
-    MCAction *defaultAction;
-    defaultAction = [[MCAction alloc] initWithBaseURL:@"http://192.168.1.5/index_param.php"
-                                        withParameter:@"key"
-                                              ofTitle:@"Raspberry Pi"];
-    [defaultAction setUrlParameterValue:@"20"];
-    [store setCurrentAction:defaultAction];
+//    MCActionStore *store = [MCActionStore defaultStore];
+//    MCAction *defaultAction;
+//    defaultAction = [[MCAction alloc] initWithBaseURL:@"http://192.168.1.5/index_param.php"
+//                                        withParameter:@"key"
+//                                              ofTitle:@"Raspberry Pi"];
+//    [defaultAction setUrlParameterValue:@"20"];
+//    [store setCurrentAction:defaultAction];
     //
     
     MCRootViewController *rootViewController;

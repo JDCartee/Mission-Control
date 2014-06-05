@@ -7,280 +7,333 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF0C3544193425CF008B004B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3543193425CF008B004B /* Foundation.framework */; };
-		DF0C3546193425CF008B004B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3545193425CF008B004B /* CoreGraphics.framework */; };
-		DF0C3548193425CF008B004B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3547193425CF008B004B /* UIKit.framework */; };
-		DF0C354E193425CF008B004B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF0C354C193425CF008B004B /* InfoPlist.strings */; };
-		DF0C3550193425CF008B004B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C354F193425CF008B004B /* main.m */; };
-		DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3553193425CF008B004B /* MCAppDelegate.m */; };
-		DF0C3556193425CF008B004B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF0C3555193425CF008B004B /* Images.xcassets */; };
-		DF0C355D193425CF008B004B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C355C193425CF008B004B /* XCTest.framework */; };
-		DF0C355E193425CF008B004B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3543193425CF008B004B /* Foundation.framework */; };
-		DF0C355F193425CF008B004B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0C3547193425CF008B004B /* UIKit.framework */; };
-		DF0C3567193425CF008B004B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF0C3565193425CF008B004B /* InfoPlist.strings */; };
-		DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3568193425CF008B004B /* Mission_ControlTests.m */; };
-		DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C35771934E6E5008B004B /* MCRootViewController.m */; };
-		DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C35771934E6E5008B004B /* MCRootViewController.m */; };
-		DF0C357B1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
-		DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF0C35781934E6E5008B004B /* MCRootViewController.xib */; };
-		DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
-		DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3583193510A3008B004B /* MCSettingsViewController.m */; };
-		DF0C358B193526DE008B004B /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358A193526DE008B004B /* MCActionStore.m */; };
-		DF0C358C193526DE008B004B /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358A193526DE008B004B /* MCActionStore.m */; };
-		DF0C358F19352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
-		DF0C359019352823008B004B /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C358E19352823008B004B /* MCAction.m */; };
-		DF0C3598193543A7008B004B /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3595193543A7008B004B /* ConnectionManager.m */; };
-		DF0C3599193543A7008B004B /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3595193543A7008B004B /* ConnectionManager.m */; };
-		DF0C359A193543A7008B004B /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3597193543A7008B004B /* WebServiceInterface.m */; };
-		DF0C359B193543A7008B004B /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C3597193543A7008B004B /* WebServiceInterface.m */; };
-		DF0C359F193548E6008B004B /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C359E193548E6008B004B /* MCWebServiceInterface.m */; };
-		DF0C35A0193548E6008B004B /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF0C359E193548E6008B004B /* MCWebServiceInterface.m */; };
+		DF32CD46193F985B001F0DCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD45193F985B001F0DCE /* Foundation.framework */; };
+		DF32CD48193F985B001F0DCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD47193F985B001F0DCE /* CoreGraphics.framework */; };
+		DF32CD4A193F985B001F0DCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD49193F985B001F0DCE /* UIKit.framework */; };
+		DF32CD4C193F985B001F0DCE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD4B193F985B001F0DCE /* CoreData.framework */; };
+		DF32CD52193F985B001F0DCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF32CD50193F985B001F0DCE /* InfoPlist.strings */; };
+		DF32CD54193F985B001F0DCE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD53193F985B001F0DCE /* main.m */; };
+		DF32CD58193F985B001F0DCE /* MCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD57193F985B001F0DCE /* MCAppDelegate.m */; };
+		DF32CD5B193F985B001F0DCE /* Mission_Control.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD59193F985B001F0DCE /* Mission_Control.xcdatamodeld */; };
+		DF32CD5D193F985B001F0DCE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF32CD5C193F985B001F0DCE /* Images.xcassets */; };
+		DF32CD64193F985B001F0DCE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD63193F985B001F0DCE /* XCTest.framework */; };
+		DF32CD65193F985B001F0DCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD45193F985B001F0DCE /* Foundation.framework */; };
+		DF32CD66193F985B001F0DCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD49193F985B001F0DCE /* UIKit.framework */; };
+		DF32CD67193F985B001F0DCE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD4B193F985B001F0DCE /* CoreData.framework */; };
+		DF32CD6F193F985B001F0DCE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DF32CD6D193F985B001F0DCE /* InfoPlist.strings */; };
+		DF32CD71193F985B001F0DCE /* Mission_ControlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD70193F985B001F0DCE /* Mission_ControlTests.m */; };
+		DF32CD96193F98CF001F0DCE /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD7D193F98CF001F0DCE /* FileHelper.m */; };
+		DF32CD97193F98CF001F0DCE /* FileHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD7D193F98CF001F0DCE /* FileHelper.m */; };
+		DF32CD98193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD80193F98CF001F0DCE /* MCWebServiceInterface.m */; };
+		DF32CD99193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD80193F98CF001F0DCE /* MCWebServiceInterface.m */; };
+		DF32CD9A193F98CF001F0DCE /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD84193F98CF001F0DCE /* ConnectionManager.m */; };
+		DF32CD9B193F98CF001F0DCE /* ConnectionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD84193F98CF001F0DCE /* ConnectionManager.m */; };
+		DF32CD9C193F98CF001F0DCE /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD86193F98CF001F0DCE /* WebServiceInterface.m */; };
+		DF32CD9D193F98CF001F0DCE /* WebServiceInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD86193F98CF001F0DCE /* WebServiceInterface.m */; };
+		DF32CDA0193F98CF001F0DCE /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD8D193F98CF001F0DCE /* MCActionStore.m */; };
+		DF32CDA1193F98CF001F0DCE /* MCActionStore.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD8D193F98CF001F0DCE /* MCActionStore.m */; };
+		DF32CDA2193F98CF001F0DCE /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD91193F98CF001F0DCE /* MCRootViewController.m */; };
+		DF32CDA3193F98CF001F0DCE /* MCRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD91193F98CF001F0DCE /* MCRootViewController.m */; };
+		DF32CDA4193F98CF001F0DCE /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF32CD92193F98CF001F0DCE /* MCRootViewController.xib */; };
+		DF32CDA5193F98CF001F0DCE /* MCRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF32CD92193F98CF001F0DCE /* MCRootViewController.xib */; };
+		DF32CDA6193F98CF001F0DCE /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD95193F98CF001F0DCE /* MCSettingsViewController.m */; };
+		DF32CDA7193F98CF001F0DCE /* MCSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CD95193F98CF001F0DCE /* MCSettingsViewController.m */; };
+		DF32CDB019400B90001F0DCE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CDAF19400B90001F0DCE /* CoreDataManager.m */; };
+		DF32CDB119400B90001F0DCE /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CDAF19400B90001F0DCE /* CoreDataManager.m */; };
+		DF32CDB519400CB4001F0DCE /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CDB419400CB4001F0DCE /* MCAction.m */; };
+		DF32CDB619400CB4001F0DCE /* MCAction.m in Sources */ = {isa = PBXBuildFile; fileRef = DF32CDB419400CB4001F0DCE /* MCAction.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF0C3560193425CF008B004B /* PBXContainerItemProxy */ = {
+		DF32CD68193F985B001F0DCE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DF0C3538193425CF008B004B /* Project object */;
+			containerPortal = DF32CD3A193F985B001F0DCE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DF0C353F193425CF008B004B;
+			remoteGlobalIDString = DF32CD41193F985B001F0DCE;
 			remoteInfo = "Mission Control";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF0C3540193425CF008B004B /* Mission Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mission Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0C3543193425CF008B004B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		DF0C3545193425CF008B004B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		DF0C3547193425CF008B004B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		DF0C354B193425CF008B004B /* Mission Control-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mission Control-Info.plist"; sourceTree = "<group>"; };
-		DF0C354D193425CF008B004B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DF0C354F193425CF008B004B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DF0C3551193425CF008B004B /* Mission Control-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mission Control-Prefix.pch"; sourceTree = "<group>"; };
-		DF0C3552193425CF008B004B /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
-		DF0C3553193425CF008B004B /* MCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppDelegate.m; sourceTree = "<group>"; };
-		DF0C3555193425CF008B004B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		DF0C355B193425CF008B004B /* Mission ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mission ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF0C355C193425CF008B004B /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		DF0C3564193425CF008B004B /* Mission ControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mission ControlTests-Info.plist"; sourceTree = "<group>"; };
-		DF0C3566193425CF008B004B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		DF0C3568193425CF008B004B /* Mission_ControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mission_ControlTests.m; sourceTree = "<group>"; };
-		DF0C35761934E6E5008B004B /* MCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCRootViewController.h; path = "View Controllers/MCRootViewController/MCRootViewController.h"; sourceTree = "<group>"; };
-		DF0C35771934E6E5008B004B /* MCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCRootViewController.m; path = "View Controllers/MCRootViewController/MCRootViewController.m"; sourceTree = "<group>"; };
-		DF0C35781934E6E5008B004B /* MCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCRootViewController.xib; path = "View Controllers/MCRootViewController/MCRootViewController.xib"; sourceTree = "<group>"; };
-		DF0C3582193510A3008B004B /* MCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCSettingsViewController.h; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.h"; sourceTree = "<group>"; };
-		DF0C3583193510A3008B004B /* MCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCSettingsViewController.m; path = "View Controllers/MCSettingsViewController/MCSettingsViewController.m"; sourceTree = "<group>"; };
-		DF0C3589193526DE008B004B /* MCActionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCActionStore.h; path = Model/MCActionStore/MCActionStore.h; sourceTree = "<group>"; };
-		DF0C358A193526DE008B004B /* MCActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCActionStore.m; path = Model/MCActionStore/MCActionStore.m; sourceTree = "<group>"; };
-		DF0C358D19352823008B004B /* MCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAction.h; path = Model/MCAction/MCAction.h; sourceTree = "<group>"; };
-		DF0C358E19352823008B004B /* MCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAction.m; path = Model/MCAction/MCAction.m; sourceTree = "<group>"; };
-		DF0C3594193543A7008B004B /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
-		DF0C3595193543A7008B004B /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
-		DF0C3596193543A7008B004B /* WebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceInterface.h; sourceTree = "<group>"; };
-		DF0C3597193543A7008B004B /* WebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceInterface.m; sourceTree = "<group>"; };
-		DF0C359D193548E6008B004B /* MCWebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCWebServiceInterface.h; path = General/MCWebServiceInterface/MCWebServiceInterface.h; sourceTree = "<group>"; };
-		DF0C359E193548E6008B004B /* MCWebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCWebServiceInterface.m; path = General/MCWebServiceInterface/MCWebServiceInterface.m; sourceTree = "<group>"; };
+		DF32CD42193F985B001F0DCE /* Mission Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mission Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF32CD45193F985B001F0DCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DF32CD47193F985B001F0DCE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DF32CD49193F985B001F0DCE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DF32CD4B193F985B001F0DCE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DF32CD4F193F985B001F0DCE /* Mission Control-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mission Control-Info.plist"; sourceTree = "<group>"; };
+		DF32CD51193F985B001F0DCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF32CD53193F985B001F0DCE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF32CD55193F985B001F0DCE /* Mission Control-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mission Control-Prefix.pch"; sourceTree = "<group>"; };
+		DF32CD56193F985B001F0DCE /* MCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MCAppDelegate.h; sourceTree = "<group>"; };
+		DF32CD57193F985B001F0DCE /* MCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MCAppDelegate.m; sourceTree = "<group>"; };
+		DF32CD5A193F985B001F0DCE /* Mission_Control.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mission_Control.xcdatamodel; sourceTree = "<group>"; };
+		DF32CD5C193F985B001F0DCE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DF32CD62193F985B001F0DCE /* Mission ControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mission ControlTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF32CD63193F985B001F0DCE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		DF32CD6C193F985B001F0DCE /* Mission ControlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mission ControlTests-Info.plist"; sourceTree = "<group>"; };
+		DF32CD6E193F985B001F0DCE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DF32CD70193F985B001F0DCE /* Mission_ControlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Mission_ControlTests.m; sourceTree = "<group>"; };
+		DF32CD7C193F98CF001F0DCE /* FileHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileHelper.h; sourceTree = "<group>"; };
+		DF32CD7D193F98CF001F0DCE /* FileHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileHelper.m; sourceTree = "<group>"; };
+		DF32CD7F193F98CF001F0DCE /* MCWebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCWebServiceInterface.h; sourceTree = "<group>"; };
+		DF32CD80193F98CF001F0DCE /* MCWebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCWebServiceInterface.m; sourceTree = "<group>"; };
+		DF32CD83193F98CF001F0DCE /* ConnectionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectionManager.h; sourceTree = "<group>"; };
+		DF32CD84193F98CF001F0DCE /* ConnectionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectionManager.m; sourceTree = "<group>"; };
+		DF32CD85193F98CF001F0DCE /* WebServiceInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebServiceInterface.h; sourceTree = "<group>"; };
+		DF32CD86193F98CF001F0DCE /* WebServiceInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebServiceInterface.m; sourceTree = "<group>"; };
+		DF32CD8C193F98CF001F0DCE /* MCActionStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCActionStore.h; sourceTree = "<group>"; };
+		DF32CD8D193F98CF001F0DCE /* MCActionStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCActionStore.m; sourceTree = "<group>"; };
+		DF32CD90193F98CF001F0DCE /* MCRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCRootViewController.h; sourceTree = "<group>"; };
+		DF32CD91193F98CF001F0DCE /* MCRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCRootViewController.m; sourceTree = "<group>"; };
+		DF32CD92193F98CF001F0DCE /* MCRootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MCRootViewController.xib; sourceTree = "<group>"; };
+		DF32CD94193F98CF001F0DCE /* MCSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MCSettingsViewController.h; sourceTree = "<group>"; };
+		DF32CD95193F98CF001F0DCE /* MCSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MCSettingsViewController.m; sourceTree = "<group>"; };
+		DF32CDAE19400B90001F0DCE /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = "Mission Control/Database/CoreDataManager/CoreDataManager.h"; sourceTree = SOURCE_ROOT; };
+		DF32CDAF19400B90001F0DCE /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = "Mission Control/Database/CoreDataManager/CoreDataManager.m"; sourceTree = SOURCE_ROOT; };
+		DF32CDB319400CB4001F0DCE /* MCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAction.h; path = "Mission Control/Model/Managed Objects/MCAction/MCAction.h"; sourceTree = SOURCE_ROOT; };
+		DF32CDB419400CB4001F0DCE /* MCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAction.m; path = "Mission Control/Model/Managed Objects/MCAction/MCAction.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DF0C353D193425CF008B004B /* Frameworks */ = {
+		DF32CD3F193F985B001F0DCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C3546193425CF008B004B /* CoreGraphics.framework in Frameworks */,
-				DF0C3548193425CF008B004B /* UIKit.framework in Frameworks */,
-				DF0C3544193425CF008B004B /* Foundation.framework in Frameworks */,
+				DF32CD48193F985B001F0DCE /* CoreGraphics.framework in Frameworks */,
+				DF32CD4C193F985B001F0DCE /* CoreData.framework in Frameworks */,
+				DF32CD4A193F985B001F0DCE /* UIKit.framework in Frameworks */,
+				DF32CD46193F985B001F0DCE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF0C3558193425CF008B004B /* Frameworks */ = {
+		DF32CD5F193F985B001F0DCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C355D193425CF008B004B /* XCTest.framework in Frameworks */,
-				DF0C355F193425CF008B004B /* UIKit.framework in Frameworks */,
-				DF0C355E193425CF008B004B /* Foundation.framework in Frameworks */,
+				DF32CD64193F985B001F0DCE /* XCTest.framework in Frameworks */,
+				DF32CD67193F985B001F0DCE /* CoreData.framework in Frameworks */,
+				DF32CD66193F985B001F0DCE /* UIKit.framework in Frameworks */,
+				DF32CD65193F985B001F0DCE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF0C3537193425CF008B004B = {
+		DF32CD39193F985B001F0DCE = {
 			isa = PBXGroup;
 			children = (
-				DF0C3549193425CF008B004B /* Mission Control */,
-				DF0C3562193425CF008B004B /* Mission ControlTests */,
-				DF0C3542193425CF008B004B /* Frameworks */,
-				DF0C3541193425CF008B004B /* Products */,
+				DF32CD4D193F985B001F0DCE /* Mission Control */,
+				DF32CD6A193F985B001F0DCE /* Mission ControlTests */,
+				DF32CD44193F985B001F0DCE /* Frameworks */,
+				DF32CD43193F985B001F0DCE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DF0C3541193425CF008B004B /* Products */ = {
+		DF32CD43193F985B001F0DCE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3540193425CF008B004B /* Mission Control.app */,
-				DF0C355B193425CF008B004B /* Mission ControlTests.xctest */,
+				DF32CD42193F985B001F0DCE /* Mission Control.app */,
+				DF32CD62193F985B001F0DCE /* Mission ControlTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DF0C3542193425CF008B004B /* Frameworks */ = {
+		DF32CD44193F985B001F0DCE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3543193425CF008B004B /* Foundation.framework */,
-				DF0C3545193425CF008B004B /* CoreGraphics.framework */,
-				DF0C3547193425CF008B004B /* UIKit.framework */,
-				DF0C355C193425CF008B004B /* XCTest.framework */,
+				DF32CD45193F985B001F0DCE /* Foundation.framework */,
+				DF32CD47193F985B001F0DCE /* CoreGraphics.framework */,
+				DF32CD49193F985B001F0DCE /* UIKit.framework */,
+				DF32CD4B193F985B001F0DCE /* CoreData.framework */,
+				DF32CD63193F985B001F0DCE /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF0C3549193425CF008B004B /* Mission Control */ = {
+		DF32CD4D193F985B001F0DCE /* Mission Control */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C359119354394008B004B /* General */,
-				DF0C358619352698008B004B /* Model */,
-				DF0C35741934E689008B004B /* View Controllers */,
-				DF0C3552193425CF008B004B /* MCAppDelegate.h */,
-				DF0C3553193425CF008B004B /* MCAppDelegate.m */,
-				DF0C3555193425CF008B004B /* Images.xcassets */,
-				DF0C354A193425CF008B004B /* Supporting Files */,
+				DF32CDA8193F997C001F0DCE /* Database */,
+				DF32CD7A193F98CF001F0DCE /* General */,
+				DF32CD87193F98CF001F0DCE /* Model */,
+				DF32CD8E193F98CF001F0DCE /* View Controllers */,
+				DF32CD56193F985B001F0DCE /* MCAppDelegate.h */,
+				DF32CD57193F985B001F0DCE /* MCAppDelegate.m */,
+				DF32CD5C193F985B001F0DCE /* Images.xcassets */,
+				DF32CD4E193F985B001F0DCE /* Supporting Files */,
 			);
 			path = "Mission Control";
 			sourceTree = "<group>";
 		};
-		DF0C354A193425CF008B004B /* Supporting Files */ = {
+		DF32CD4E193F985B001F0DCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C354B193425CF008B004B /* Mission Control-Info.plist */,
-				DF0C354C193425CF008B004B /* InfoPlist.strings */,
-				DF0C354F193425CF008B004B /* main.m */,
-				DF0C3551193425CF008B004B /* Mission Control-Prefix.pch */,
+				DF32CD4F193F985B001F0DCE /* Mission Control-Info.plist */,
+				DF32CD50193F985B001F0DCE /* InfoPlist.strings */,
+				DF32CD53193F985B001F0DCE /* main.m */,
+				DF32CD55193F985B001F0DCE /* Mission Control-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DF0C3562193425CF008B004B /* Mission ControlTests */ = {
+		DF32CD6A193F985B001F0DCE /* Mission ControlTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3568193425CF008B004B /* Mission_ControlTests.m */,
-				DF0C3563193425CF008B004B /* Supporting Files */,
+				DF32CD70193F985B001F0DCE /* Mission_ControlTests.m */,
+				DF32CD6B193F985B001F0DCE /* Supporting Files */,
 			);
 			path = "Mission ControlTests";
 			sourceTree = "<group>";
 		};
-		DF0C3563193425CF008B004B /* Supporting Files */ = {
+		DF32CD6B193F985B001F0DCE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3564193425CF008B004B /* Mission ControlTests-Info.plist */,
-				DF0C3565193425CF008B004B /* InfoPlist.strings */,
+				DF32CD6C193F985B001F0DCE /* Mission ControlTests-Info.plist */,
+				DF32CD6D193F985B001F0DCE /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DF0C35741934E689008B004B /* View Controllers */ = {
+		DF32CD7A193F98CF001F0DCE /* General */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C35811935106E008B004B /* MCSettingsViewController */,
-				DF0C35751934E6AA008B004B /* MCRootViewController */,
+				DF32CD7B193F98CF001F0DCE /* FIleHelper */,
+				DF32CD7E193F98CF001F0DCE /* MCWebServiceInterface */,
+				DF32CD81193F98CF001F0DCE /* WebServiceInterface */,
 			);
-			name = "View Controllers";
+			path = General;
 			sourceTree = "<group>";
 		};
-		DF0C35751934E6AA008B004B /* MCRootViewController */ = {
+		DF32CD7B193F98CF001F0DCE /* FIleHelper */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C35761934E6E5008B004B /* MCRootViewController.h */,
-				DF0C35771934E6E5008B004B /* MCRootViewController.m */,
-				DF0C35781934E6E5008B004B /* MCRootViewController.xib */,
+				DF32CD7C193F98CF001F0DCE /* FileHelper.h */,
+				DF32CD7D193F98CF001F0DCE /* FileHelper.m */,
 			);
-			name = MCRootViewController;
+			path = FIleHelper;
 			sourceTree = "<group>";
 		};
-		DF0C35811935106E008B004B /* MCSettingsViewController */ = {
+		DF32CD7E193F98CF001F0DCE /* MCWebServiceInterface */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3582193510A3008B004B /* MCSettingsViewController.h */,
-				DF0C3583193510A3008B004B /* MCSettingsViewController.m */,
+				DF32CD7F193F98CF001F0DCE /* MCWebServiceInterface.h */,
+				DF32CD80193F98CF001F0DCE /* MCWebServiceInterface.m */,
 			);
-			name = MCSettingsViewController;
+			path = MCWebServiceInterface;
 			sourceTree = "<group>";
 		};
-		DF0C358619352698008B004B /* Model */ = {
+		DF32CD81193F98CF001F0DCE /* WebServiceInterface */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3588193526AF008B004B /* MCAction */,
-				DF0C3587193526A0008B004B /* MCActionStore */,
+				DF32CD82193F98CF001F0DCE /* ConnectionManager */,
+				DF32CD85193F98CF001F0DCE /* WebServiceInterface.h */,
+				DF32CD86193F98CF001F0DCE /* WebServiceInterface.m */,
 			);
-			name = Model;
+			path = WebServiceInterface;
 			sourceTree = "<group>";
 		};
-		DF0C3587193526A0008B004B /* MCActionStore */ = {
+		DF32CD82193F98CF001F0DCE /* ConnectionManager */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C3589193526DE008B004B /* MCActionStore.h */,
-				DF0C358A193526DE008B004B /* MCActionStore.m */,
-			);
-			name = MCActionStore;
-			sourceTree = "<group>";
-		};
-		DF0C3588193526AF008B004B /* MCAction */ = {
-			isa = PBXGroup;
-			children = (
-				DF0C358D19352823008B004B /* MCAction.h */,
-				DF0C358E19352823008B004B /* MCAction.m */,
-			);
-			name = MCAction;
-			sourceTree = "<group>";
-		};
-		DF0C359119354394008B004B /* General */ = {
-			isa = PBXGroup;
-			children = (
-				DF0C359C19354870008B004B /* MCWebServiceInterface */,
-				DF0C3592193543A7008B004B /* WebServiceInterface */,
-			);
-			name = General;
-			sourceTree = "<group>";
-		};
-		DF0C3592193543A7008B004B /* WebServiceInterface */ = {
-			isa = PBXGroup;
-			children = (
-				DF0C3593193543A7008B004B /* ConnectionManager */,
-				DF0C3596193543A7008B004B /* WebServiceInterface.h */,
-				DF0C3597193543A7008B004B /* WebServiceInterface.m */,
-			);
-			name = WebServiceInterface;
-			path = General/WebServiceInterface;
-			sourceTree = "<group>";
-		};
-		DF0C3593193543A7008B004B /* ConnectionManager */ = {
-			isa = PBXGroup;
-			children = (
-				DF0C3594193543A7008B004B /* ConnectionManager.h */,
-				DF0C3595193543A7008B004B /* ConnectionManager.m */,
+				DF32CD83193F98CF001F0DCE /* ConnectionManager.h */,
+				DF32CD84193F98CF001F0DCE /* ConnectionManager.m */,
 			);
 			path = ConnectionManager;
 			sourceTree = "<group>";
 		};
-		DF0C359C19354870008B004B /* MCWebServiceInterface */ = {
+		DF32CD87193F98CF001F0DCE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				DF0C359D193548E6008B004B /* MCWebServiceInterface.h */,
-				DF0C359E193548E6008B004B /* MCWebServiceInterface.m */,
+				DF32CDB219400C70001F0DCE /* Managed Objects */,
+				DF32CD8B193F98CF001F0DCE /* MCActionStore */,
 			);
-			name = MCWebServiceInterface;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DF32CD88193F98CF001F0DCE /* MCAction */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CDB319400CB4001F0DCE /* MCAction.h */,
+				DF32CDB419400CB4001F0DCE /* MCAction.m */,
+			);
+			path = MCAction;
+			sourceTree = "<group>";
+		};
+		DF32CD8B193F98CF001F0DCE /* MCActionStore */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CD8C193F98CF001F0DCE /* MCActionStore.h */,
+				DF32CD8D193F98CF001F0DCE /* MCActionStore.m */,
+			);
+			path = MCActionStore;
+			sourceTree = "<group>";
+		};
+		DF32CD8E193F98CF001F0DCE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CD8F193F98CF001F0DCE /* MCRootViewController */,
+				DF32CD93193F98CF001F0DCE /* MCSettingsViewController */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		DF32CD8F193F98CF001F0DCE /* MCRootViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CD90193F98CF001F0DCE /* MCRootViewController.h */,
+				DF32CD91193F98CF001F0DCE /* MCRootViewController.m */,
+				DF32CD92193F98CF001F0DCE /* MCRootViewController.xib */,
+			);
+			path = MCRootViewController;
+			sourceTree = "<group>";
+		};
+		DF32CD93193F98CF001F0DCE /* MCSettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CD94193F98CF001F0DCE /* MCSettingsViewController.h */,
+				DF32CD95193F98CF001F0DCE /* MCSettingsViewController.m */,
+			);
+			path = MCSettingsViewController;
+			sourceTree = "<group>";
+		};
+		DF32CDA8193F997C001F0DCE /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CDA9193F9991001F0DCE /* CoreDataManager */,
+				DF32CD59193F985B001F0DCE /* Mission_Control.xcdatamodeld */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+		DF32CDA9193F9991001F0DCE /* CoreDataManager */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CDAE19400B90001F0DCE /* CoreDataManager.h */,
+				DF32CDAF19400B90001F0DCE /* CoreDataManager.m */,
+			);
+			name = CoreDataManager;
+			path = "../../../Mission Control/Mission Control/Database/CoreDataManager";
+			sourceTree = "<group>";
+		};
+		DF32CDB219400C70001F0DCE /* Managed Objects */ = {
+			isa = PBXGroup;
+			children = (
+				DF32CD88193F98CF001F0DCE /* MCAction */,
+			);
+			name = "Managed Objects";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DF0C353F193425CF008B004B /* Mission Control */ = {
+		DF32CD41193F985B001F0DCE /* Mission Control */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF0C356C193425CF008B004B /* Build configuration list for PBXNativeTarget "Mission Control" */;
+			buildConfigurationList = DF32CD74193F985B001F0DCE /* Build configuration list for PBXNativeTarget "Mission Control" */;
 			buildPhases = (
-				DF0C353C193425CF008B004B /* Sources */,
-				DF0C353D193425CF008B004B /* Frameworks */,
-				DF0C353E193425CF008B004B /* Resources */,
+				DF32CD3E193F985B001F0DCE /* Sources */,
+				DF32CD3F193F985B001F0DCE /* Frameworks */,
+				DF32CD40193F985B001F0DCE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -288,137 +341,142 @@
 			);
 			name = "Mission Control";
 			productName = "Mission Control";
-			productReference = DF0C3540193425CF008B004B /* Mission Control.app */;
+			productReference = DF32CD42193F985B001F0DCE /* Mission Control.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DF0C355A193425CF008B004B /* Mission ControlTests */ = {
+		DF32CD61193F985B001F0DCE /* Mission ControlTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DF0C356F193425CF008B004B /* Build configuration list for PBXNativeTarget "Mission ControlTests" */;
+			buildConfigurationList = DF32CD77193F985B001F0DCE /* Build configuration list for PBXNativeTarget "Mission ControlTests" */;
 			buildPhases = (
-				DF0C3557193425CF008B004B /* Sources */,
-				DF0C3558193425CF008B004B /* Frameworks */,
-				DF0C3559193425CF008B004B /* Resources */,
+				DF32CD5E193F985B001F0DCE /* Sources */,
+				DF32CD5F193F985B001F0DCE /* Frameworks */,
+				DF32CD60193F985B001F0DCE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DF0C3561193425CF008B004B /* PBXTargetDependency */,
+				DF32CD69193F985B001F0DCE /* PBXTargetDependency */,
 			);
 			name = "Mission ControlTests";
 			productName = "Mission ControlTests";
-			productReference = DF0C355B193425CF008B004B /* Mission ControlTests.xctest */;
+			productReference = DF32CD62193F985B001F0DCE /* Mission ControlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DF0C3538193425CF008B004B /* Project object */ = {
+		DF32CD3A193F985B001F0DCE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MC;
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Jeremy Cartee";
 				TargetAttributes = {
-					DF0C355A193425CF008B004B = {
-						TestTargetID = DF0C353F193425CF008B004B;
+					DF32CD61193F985B001F0DCE = {
+						TestTargetID = DF32CD41193F985B001F0DCE;
 					};
 				};
 			};
-			buildConfigurationList = DF0C353B193425CF008B004B /* Build configuration list for PBXProject "Mission Control" */;
+			buildConfigurationList = DF32CD3D193F985B001F0DCE /* Build configuration list for PBXProject "Mission Control" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = DF0C3537193425CF008B004B;
-			productRefGroup = DF0C3541193425CF008B004B /* Products */;
+			mainGroup = DF32CD39193F985B001F0DCE;
+			productRefGroup = DF32CD43193F985B001F0DCE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DF0C353F193425CF008B004B /* Mission Control */,
-				DF0C355A193425CF008B004B /* Mission ControlTests */,
+				DF32CD41193F985B001F0DCE /* Mission Control */,
+				DF32CD61193F985B001F0DCE /* Mission ControlTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DF0C353E193425CF008B004B /* Resources */ = {
+		DF32CD40193F985B001F0DCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C357B1934E6E5008B004B /* MCRootViewController.xib in Resources */,
-				DF0C354E193425CF008B004B /* InfoPlist.strings in Resources */,
-				DF0C3556193425CF008B004B /* Images.xcassets in Resources */,
+				DF32CDA4193F98CF001F0DCE /* MCRootViewController.xib in Resources */,
+				DF32CD52193F985B001F0DCE /* InfoPlist.strings in Resources */,
+				DF32CD5D193F985B001F0DCE /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF0C3559193425CF008B004B /* Resources */ = {
+		DF32CD60193F985B001F0DCE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C357C1934E6E5008B004B /* MCRootViewController.xib in Resources */,
-				DF0C3567193425CF008B004B /* InfoPlist.strings in Resources */,
+				DF32CDA5193F98CF001F0DCE /* MCRootViewController.xib in Resources */,
+				DF32CD6F193F985B001F0DCE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DF0C353C193425CF008B004B /* Sources */ = {
+		DF32CD3E193F985B001F0DCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C359A193543A7008B004B /* WebServiceInterface.m in Sources */,
-				DF0C3554193425CF008B004B /* MCAppDelegate.m in Sources */,
-				DF0C358F19352823008B004B /* MCAction.m in Sources */,
-				DF0C3584193510A3008B004B /* MCSettingsViewController.m in Sources */,
-				DF0C35791934E6E5008B004B /* MCRootViewController.m in Sources */,
-				DF0C358B193526DE008B004B /* MCActionStore.m in Sources */,
-				DF0C3598193543A7008B004B /* ConnectionManager.m in Sources */,
-				DF0C3550193425CF008B004B /* main.m in Sources */,
-				DF0C359F193548E6008B004B /* MCWebServiceInterface.m in Sources */,
+				DF32CDA6193F98CF001F0DCE /* MCSettingsViewController.m in Sources */,
+				DF32CDA2193F98CF001F0DCE /* MCRootViewController.m in Sources */,
+				DF32CD58193F985B001F0DCE /* MCAppDelegate.m in Sources */,
+				DF32CD5B193F985B001F0DCE /* Mission_Control.xcdatamodeld in Sources */,
+				DF32CDA0193F98CF001F0DCE /* MCActionStore.m in Sources */,
+				DF32CDB019400B90001F0DCE /* CoreDataManager.m in Sources */,
+				DF32CD98193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */,
+				DF32CDB519400CB4001F0DCE /* MCAction.m in Sources */,
+				DF32CD9C193F98CF001F0DCE /* WebServiceInterface.m in Sources */,
+				DF32CD9A193F98CF001F0DCE /* ConnectionManager.m in Sources */,
+				DF32CD54193F985B001F0DCE /* main.m in Sources */,
+				DF32CD96193F98CF001F0DCE /* FileHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DF0C3557193425CF008B004B /* Sources */ = {
+		DF32CD5E193F985B001F0DCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF0C357A1934E6E5008B004B /* MCRootViewController.m in Sources */,
-				DF0C358C193526DE008B004B /* MCActionStore.m in Sources */,
-				DF0C35A0193548E6008B004B /* MCWebServiceInterface.m in Sources */,
-				DF0C3585193510A3008B004B /* MCSettingsViewController.m in Sources */,
-				DF0C359B193543A7008B004B /* WebServiceInterface.m in Sources */,
-				DF0C3599193543A7008B004B /* ConnectionManager.m in Sources */,
-				DF0C359019352823008B004B /* MCAction.m in Sources */,
-				DF0C3569193425CF008B004B /* Mission_ControlTests.m in Sources */,
+				DF32CD71193F985B001F0DCE /* Mission_ControlTests.m in Sources */,
+				DF32CDA7193F98CF001F0DCE /* MCSettingsViewController.m in Sources */,
+				DF32CD9D193F98CF001F0DCE /* WebServiceInterface.m in Sources */,
+				DF32CDB619400CB4001F0DCE /* MCAction.m in Sources */,
+				DF32CDB119400B90001F0DCE /* CoreDataManager.m in Sources */,
+				DF32CD9B193F98CF001F0DCE /* ConnectionManager.m in Sources */,
+				DF32CDA3193F98CF001F0DCE /* MCRootViewController.m in Sources */,
+				DF32CD97193F98CF001F0DCE /* FileHelper.m in Sources */,
+				DF32CD99193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */,
+				DF32CDA1193F98CF001F0DCE /* MCActionStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF0C3561193425CF008B004B /* PBXTargetDependency */ = {
+		DF32CD69193F985B001F0DCE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DF0C353F193425CF008B004B /* Mission Control */;
-			targetProxy = DF0C3560193425CF008B004B /* PBXContainerItemProxy */;
+			target = DF32CD41193F985B001F0DCE /* Mission Control */;
+			targetProxy = DF32CD68193F985B001F0DCE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		DF0C354C193425CF008B004B /* InfoPlist.strings */ = {
+		DF32CD50193F985B001F0DCE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF0C354D193425CF008B004B /* en */,
+				DF32CD51193F985B001F0DCE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		DF0C3565193425CF008B004B /* InfoPlist.strings */ = {
+		DF32CD6D193F985B001F0DCE /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				DF0C3566193425CF008B004B /* en */,
+				DF32CD6E193F985B001F0DCE /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -426,7 +484,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DF0C356A193425CF008B004B /* Debug */ = {
+		DF32CD72193F985B001F0DCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -464,7 +522,7 @@
 			};
 			name = Debug;
 		};
-		DF0C356B193425CF008B004B /* Release */ = {
+		DF32CD73193F985B001F0DCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -496,7 +554,7 @@
 			};
 			name = Release;
 		};
-		DF0C356D193425CF008B004B /* Debug */ = {
+		DF32CD75193F985B001F0DCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -509,7 +567,7 @@
 			};
 			name = Debug;
 		};
-		DF0C356E193425CF008B004B /* Release */ = {
+		DF32CD76193F985B001F0DCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -522,7 +580,7 @@
 			};
 			name = Release;
 		};
-		DF0C3570193425CF008B004B /* Debug */ = {
+		DF32CD78193F985B001F0DCE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mission Control.app/Mission Control";
@@ -544,7 +602,7 @@
 			};
 			name = Debug;
 		};
-		DF0C3571193425CF008B004B /* Release */ = {
+		DF32CD79193F985B001F0DCE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Mission Control.app/Mission Control";
@@ -565,32 +623,47 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DF0C353B193425CF008B004B /* Build configuration list for PBXProject "Mission Control" */ = {
+		DF32CD3D193F985B001F0DCE /* Build configuration list for PBXProject "Mission Control" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF0C356A193425CF008B004B /* Debug */,
-				DF0C356B193425CF008B004B /* Release */,
+				DF32CD72193F985B001F0DCE /* Debug */,
+				DF32CD73193F985B001F0DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DF0C356C193425CF008B004B /* Build configuration list for PBXNativeTarget "Mission Control" */ = {
+		DF32CD74193F985B001F0DCE /* Build configuration list for PBXNativeTarget "Mission Control" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF0C356D193425CF008B004B /* Debug */,
-				DF0C356E193425CF008B004B /* Release */,
+				DF32CD75193F985B001F0DCE /* Debug */,
+				DF32CD76193F985B001F0DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		DF0C356F193425CF008B004B /* Build configuration list for PBXNativeTarget "Mission ControlTests" */ = {
+		DF32CD77193F985B001F0DCE /* Build configuration list for PBXNativeTarget "Mission ControlTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF0C3570193425CF008B004B /* Debug */,
-				DF0C3571193425CF008B004B /* Release */,
+				DF32CD78193F985B001F0DCE /* Debug */,
+				DF32CD79193F985B001F0DCE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DF32CD59193F985B001F0DCE /* Mission_Control.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DF32CD5A193F985B001F0DCE /* Mission_Control.xcdatamodel */,
+			);
+			currentVersion = DF32CD5A193F985B001F0DCE /* Mission_Control.xcdatamodel */;
+			path = Mission_Control.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = DF0C3538193425CF008B004B /* Project object */;
+	rootObject = DF32CD3A193F985B001F0DCE /* Project object */;
 }

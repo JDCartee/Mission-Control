@@ -7,6 +7,13 @@
 //
 
 #import "MCActionStore.h"
+#import "FileHelper.h"
+
+#define kMCActionStoreSavedActionTitleKey                     @"savedActionTitle"
+#define kMCActionStoreSavedActionBaseURLKey                   @"savedActionBaseURL"
+#define kMCActionStoreSavedActionUrlParameterKeyKey           @"savedActionUrlParameterKey"
+#define kMCActionStoreSavedActionParameterValueKey            @"savedActionUrlParameterValue"
+
 
 static MCActionStore *_mainInstance;
 
@@ -36,7 +43,7 @@ static MCActionStore *_mainInstance;
     self = [super init];
     if (self)
     {
-            self.app = [UIApplication sharedApplication];
+        self.app = [UIApplication sharedApplication];
     }
     return self;
 }
@@ -50,5 +57,6 @@ static MCActionStore *_mainInstance;
 {
     [self.app setNetworkActivityIndicatorVisible:NO];
 }
+
 
 @end

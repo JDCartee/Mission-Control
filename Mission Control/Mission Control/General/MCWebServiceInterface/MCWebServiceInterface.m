@@ -23,14 +23,12 @@
                           parameterValue];
         [self setWaitingForResponse:YES];
     
-//        [delegate disableButtons];
-    
         [self.connectionManager setConnectionTimeout:40.0];
         [self.connectionManager connectWithGetByAppendingToURL:stringToAppend];
     }
     else
     {
-        NSLog(@"Piglow command already processing.");
+        NSLog(@"Command already processing.");
     }
 }
 

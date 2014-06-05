@@ -1,0 +1,223 @@
+//
+//  CoreDataManager.m
+//  FormsinMotion
+//
+//  Created by Jeremy Cartee on 11/29/12.
+//  Copyright (c) 2012 KeyMark Inc. All rights reserved.
+//
+// This is a test to see if my changes get pushed to Subversion
+
+#import "CoreDataManager.h"
+#import "FileHelpers.h"
+#import "Log.h"
+
+@implementation CoreDataManager
+
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize persistentStoreName = _persistentStoreName;
+
+-(id)init
+{
+    self = [super init];
+    
+    if (self)
+    {
+        if (!_persistentStoreName)
+            _persistentStoreName = @"store.data";
+        _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:_managedObjectModel];
+        NSURL *storeURL = [NSURL fileURLWithPath:[FileHelpers pathInLibraryDirectory:[NSString stringWithFormat:@"%@.sqlite", _persistentStoreName]]];
+        
+        NSError *error = nil;
+        
+        if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                              configuration:nil
+                                        URL:storeURL
+                                    options:nil
+                                      error:&error])
+        {
+            [Log LogError:[NSString stringWithFormat:@" Core Data Manager ERROR - Open Failed: %@", [error localizedDescription]]];
+            [NSException raise:@"Open failed"
+                        format:@"Reason %@", [error localizedDescription]];
+        }
+        
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:_persistentStoreCoordinator];
+        [_managedObjectContext setUndoManager:nil];
+    }
+    
+    return self;
+}
+
+-(id)initWithStoreName:(NSString *)storeName
+{
+    self = [super init];
+    
+    if(self)
+    {
+        _persistentStoreName = storeName;
+        self = [self init];
+    }
+    
+    return self;
+}
+
+-(NSArray *)fetchEntity:(NSString *)entityKey
+              sortOrder:(int)sort
+                sortKey:(NSString *)sortKey
+{
+    BOOL sortAsc;
+    
+    switch (sort) {
+        case sortAscending:
+            sortAsc = YES;
+            break;
+        case sortDescending:
+            sortAsc = NO;
+            break;
+        default:
+            break;
+    }
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *e = [[_managedObjectModel entitiesByName] objectForKey:entityKey];
+    [request setEntity:e];
+    
+    if (sort != sortNone)
+    {
+        NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:sortKey
+                                                             ascending:sortAsc];
+        [request setSortDescriptors:[NSArray arrayWithObject:sd]];
+    }
+    
+    NSError *error;
+    
+    NSArray *result = [_managedObjectContext executeFetchRequest:request
+                                             error:&error];
+    if(!result)
+    {
+        [Log LogError:[NSString stringWithFormat:@" Core Data Manager ERROR - Fetch failed: %@", [error localizedDescription]]];
+        [NSException raise:@"Fetch failed"
+                    format:@"Reason: %@", [error localizedDescription]];
+    }
+    
+    return [[NSArray alloc] initWithArray:result];
+}
+
+- (id)fetchObject:(NSString *)entityName
+        attribute:(NSString *)attribute
+            value:(NSString *)value
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:entityName
+                inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    
+    [Log LogTrace:[NSString stringWithFormat:@"Query - Entity: %@ Predicate: %@ = %@", entityName, attribute, value]];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"%K = %@", attribute, value];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    [Log LogTrace:[NSString stringWithFormat:@"Results count: %d", [array count]]];
+    
+    if (error)
+        [Log LogError:[NSString stringWithFormat:@"*** Core Data fetch ERROR: %@", [error localizedDescription]]];
+    
+    if (array != nil) {
+        //NSUInteger count = [array count]; // May be 0 if the object has been deleted.
+        if ([array count] == 0)
+            return nil;
+        else
+            return [array objectAtIndex:0];
+        //
+    }
+    else {
+        return nil;
+        // Deal with error.
+    }
+}
+
+- (NSArray *)fetchObjects:(NSString *)entityName
+             attribute:(NSString *)attribute
+                 value:(NSString *)value
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:entityName
+                inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    
+    [Log LogTrace:[NSString stringWithFormat:@"Query - Entity: %@ Predicate: %@ = %@", entityName, attribute, value]];
+    
+    NSPredicate *predicate =
+    [NSPredicate predicateWithFormat:@"%K = %@", attribute, value];
+    [request setPredicate:predicate];
+    
+    NSError *error;
+    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    [Log LogTrace:[NSString stringWithFormat:@"Results count: %d", [array count]]];
+    
+    if (error)
+        [Log LogError:[NSString stringWithFormat:@"*** Core Data fetch ERROR: %@", [error localizedDescription]]];
+    
+    return array;
+}
+
+- (NSArray *)fetchObjects:(NSString *)entityName
+                Parameters:(NSMutableDictionary *)parameters
+{
+    NSMutableArray *preds = [[NSMutableArray alloc] init];
+    
+    NSPredicate *pred;
+    NSEnumerator *enumerator = [parameters keyEnumerator];
+    
+    for(NSString *aKey in enumerator)
+    {
+        pred=[NSPredicate predicateWithFormat:@"%K = %@", aKey, [parameters objectForKey:aKey]];
+        [preds addObject:pred];
+        
+        [Log LogTrace:[NSString stringWithFormat:@"Query - Entity: %@ Predicate: %@ = %@", entityName, aKey, [parameters objectForKey:aKey]]];
+    }
+    
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity =
+    [NSEntityDescription entityForName:entityName
+                inManagedObjectContext:_managedObjectContext];
+    [request setEntity:entity];
+    
+    
+    NSPredicate *requestPreditace = [NSCompoundPredicate andPredicateWithSubpredicates:preds];
+    [request setPredicate:requestPreditace];
+    
+    NSError *error;
+    NSArray *array = [_managedObjectContext executeFetchRequest:request error:&error];
+    
+    [Log LogTrace:[NSString stringWithFormat:@"Results count: %d", [array count]]];
+    
+    if (error)
+        [Log LogError:[NSString stringWithFormat:@"*** Core Data fetch ERROR: %@", [error localizedDescription]]];
+    
+    return array;
+}
+
+- (BOOL)saveChanges
+{
+    NSError *err = nil;
+    
+    BOOL successful = [_managedObjectContext save:&err];
+
+    if(!successful)
+        [Log LogError:[NSString stringWithFormat:@" Core Data Manager ERROR - Error saving: %@", [err localizedDescription]]];
+    
+    return successful;
+}
+@end

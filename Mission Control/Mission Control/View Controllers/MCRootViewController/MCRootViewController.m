@@ -47,12 +47,14 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self setupNavBarButtons];
     [self setupCurrentAction];
     [self setupActionSlider];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [self setupResponseTextView];
+    if (self.currentActionFromStore)
+    {
+    }
 }
 
 #pragma mark IBActions
@@ -123,7 +125,6 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (void)setupCurrentAction
 {
-    self.webService = nil;
     NSString *value;
     self.currentActionFromStore = self.actionStore.currentAction;
     if (self.currentActionFromStore)
@@ -149,10 +150,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
         [self updateActionValue];
     }
     
-    NSString *baseURL = self.currentActionFromStore.baseURL;
-    self.webService = [[MCWebServiceInterface alloc] initWithURL:baseURL];
-    [self.webService setDelegate:self];
-
+    [self refreshwebService];
 }
 
 #pragma mark Slider
@@ -187,7 +185,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.actionContainerView addSubview:self.responseWebView];
 }
 
-#pragma mark MCWebServicceInterface Delegate
+#pragma mark Web Service
 
 - (void)returnData:(id)data
 {
@@ -198,9 +196,17 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
         returnData = [[[NSString alloc] initWithData:conn.returnData encoding:NSASCIIStringEncoding] copy];
         [self.responseWebView loadHTMLString:returnData baseURL:[NSURL URLWithString:self.currentActionFromStore.baseURL]];
     }
-    [self setupCurrentAction];
+    [self refreshwebService];
     [self.actionStore networkActivityIndicatorHide];
     [self.submitButton setEnabled:YES];
+}
+
+- (void)refreshwebService
+{
+    self.webService = nil;
+    NSString *baseURL = self.currentActionFromStore.baseURL;
+    self.webService = [[MCWebServiceInterface alloc] initWithURL:baseURL];
+    [self.webService setDelegate:self];
 }
 
 @end
