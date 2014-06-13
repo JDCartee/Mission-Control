@@ -44,6 +44,10 @@ static MCActionStore *_mainInstance;
     if (self)
     {
         self.app = [UIApplication sharedApplication];
+        if (!self.coreDataManager)
+        {
+            self.coreDataManager = [[CoreDataManager alloc] init];
+        }
     }
     return self;
 }
@@ -56,6 +60,31 @@ static MCActionStore *_mainInstance;
 - (void)networkActivityIndicatorHide
 {
     [self.app setNetworkActivityIndicatorVisible:NO];
+}
+
+- (void)restoreRecentAction
+{
+    self.currentAction = [MCAction getRecentAction];
+}
+
+- (NSString *)uuid
+{
+    NSString *uuidString;
+    CFUUIDRef uuid = CFUUIDCreate(NULL);
+    if (uuid)
+    {
+        uuidString = (NSString *)CFBridgingRelease(CFUUIDCreateString(NULL, uuid));
+        CFRelease(uuid);
+    }
+    return uuidString;
+}
+
+- (NSArray *)getActions
+{
+    NSArray *databaseActions = [MCAction getActions];
+    self.actions = [[NSArray arrayWithArray:databaseActions] copy];
+    databaseActions = nil;
+    return  self.actions;
 }
 
 

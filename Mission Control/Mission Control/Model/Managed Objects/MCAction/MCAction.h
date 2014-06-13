@@ -18,4 +18,13 @@
 @property (nonatomic, retain) NSString * urlParameterKey;
 @property (nonatomic, retain) NSString * urlParameterValue;
 
++ (MCAction *)createAction:(NSString *)title
+                        ID:(NSString *)actionID
+                       URL:(NSString *)url
+              parameterKey:(NSString *)key
+            parameterValue:(NSString *)value;
++ (NSArray *)getActions;
++ (MCAction *)getRecentAction;
++ (void)saveRecentAction:(MCAction *)action;
+
 @end

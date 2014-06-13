@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF2B49711944025200E9919A /* MCActionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B496F1944025200E9919A /* MCActionDetailViewController.m */; };
+		DF2B49721944025200E9919A /* MCActionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF2B496F1944025200E9919A /* MCActionDetailViewController.m */; };
+		DF2B49731944025200E9919A /* MCActionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B49701944025200E9919A /* MCActionDetailViewController.xib */; };
+		DF2B49741944025200E9919A /* MCActionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2B49701944025200E9919A /* MCActionDetailViewController.xib */; };
 		DF32CD46193F985B001F0DCE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD45193F985B001F0DCE /* Foundation.framework */; };
 		DF32CD48193F985B001F0DCE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD47193F985B001F0DCE /* CoreGraphics.framework */; };
 		DF32CD4A193F985B001F0DCE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF32CD49193F985B001F0DCE /* UIKit.framework */; };
@@ -55,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF2B496E1944025200E9919A /* MCActionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCActionDetailViewController.h; path = MCNewActionViewController/MCActionDetailViewController.h; sourceTree = "<group>"; };
+		DF2B496F1944025200E9919A /* MCActionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCActionDetailViewController.m; path = MCNewActionViewController/MCActionDetailViewController.m; sourceTree = "<group>"; };
+		DF2B49701944025200E9919A /* MCActionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MCActionDetailViewController.xib; path = MCNewActionViewController/MCActionDetailViewController.xib; sourceTree = "<group>"; };
 		DF32CD42193F985B001F0DCE /* Mission Control.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mission Control.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF32CD45193F985B001F0DCE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DF32CD47193F985B001F0DCE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -120,6 +127,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF2B496D1944018600E9919A /* MCNewActionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DF2B496E1944025200E9919A /* MCActionDetailViewController.h */,
+				DF2B496F1944025200E9919A /* MCActionDetailViewController.m */,
+				DF2B49701944025200E9919A /* MCActionDetailViewController.xib */,
+			);
+			name = MCNewActionViewController;
+			sourceTree = "<group>";
+		};
 		DF32CD39193F985B001F0DCE = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +289,7 @@
 		DF32CD8E193F98CF001F0DCE /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				DF2B496D1944018600E9919A /* MCNewActionViewController */,
 				DF32CD8F193F98CF001F0DCE /* MCRootViewController */,
 				DF32CD93193F98CF001F0DCE /* MCSettingsViewController */,
 			);
@@ -401,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF32CDA4193F98CF001F0DCE /* MCRootViewController.xib in Resources */,
+				DF2B49731944025200E9919A /* MCActionDetailViewController.xib in Resources */,
 				DF32CD52193F985B001F0DCE /* InfoPlist.strings in Resources */,
 				DF32CD5D193F985B001F0DCE /* Images.xcassets in Resources */,
 			);
@@ -412,6 +431,7 @@
 			files = (
 				DF32CDA5193F98CF001F0DCE /* MCRootViewController.xib in Resources */,
 				DF32CD6F193F985B001F0DCE /* InfoPlist.strings in Resources */,
+				DF2B49741944025200E9919A /* MCActionDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +446,7 @@
 				DF32CDA2193F98CF001F0DCE /* MCRootViewController.m in Sources */,
 				DF32CD58193F985B001F0DCE /* MCAppDelegate.m in Sources */,
 				DF32CD5B193F985B001F0DCE /* Mission_Control.xcdatamodeld in Sources */,
+				DF2B49711944025200E9919A /* MCActionDetailViewController.m in Sources */,
 				DF32CDA0193F98CF001F0DCE /* MCActionStore.m in Sources */,
 				DF32CDB019400B90001F0DCE /* CoreDataManager.m in Sources */,
 				DF32CD98193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */,
@@ -450,6 +471,7 @@
 				DF32CDA3193F98CF001F0DCE /* MCRootViewController.m in Sources */,
 				DF32CD97193F98CF001F0DCE /* FileHelper.m in Sources */,
 				DF32CD99193F98CF001F0DCE /* MCWebServiceInterface.m in Sources */,
+				DF2B49721944025200E9919A /* MCActionDetailViewController.m in Sources */,
 				DF32CDA1193F98CF001F0DCE /* MCActionStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MCSettingsViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MCSettingsViewController : UITableViewController
+<UITableViewDataSource,
+UITableViewDelegate>
 
 @end

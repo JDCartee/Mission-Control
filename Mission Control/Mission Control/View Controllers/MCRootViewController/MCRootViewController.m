@@ -11,6 +11,7 @@
 #import "MCActionStore.h"
 #import "MCWebServiceInterface.h"
 #import "ConnectionManager.h"
+#import "MCAction.h"
 
 const float navigationItemSettingsButtonWidth =                 30.0f;
 const float navigationItemSettingsButtonHeight =                30.0f;
@@ -25,6 +26,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 @property (nonatomic, strong) MCWebServiceInterface *webService;
 @property (nonatomic, strong) UIWebView *responseWebView;
 
+@property (nonatomic, strong) UIPickerView *actionPicker;
+@property (nonatomic, strong) UITapGestureRecognizer *pickerGesture;
+@property (nonatomic) NSInteger currentActionPickerRow;
+
 @end
 
 @implementation MCRootViewController
@@ -37,6 +42,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     if (self)
     {
         self.actionStore = [MCActionStore defaultStore];
+        [self.actionStore restoreRecentAction];
     }
     return self;
 }
@@ -54,6 +60,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self setupResponseTextView];
     if (self.currentActionFromStore)
     {
+        [self setupCurrentAction];
     }
 }
 
@@ -70,6 +77,19 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (IBAction)chooseAnActionButton:(id)sender
 {
+    [self.actionPicker removeFromSuperview];
+    [self.responseWebView removeFromSuperview];
+    float width = self.actionContainerView.frame.size.width;
+    float height = self.actionContainerView.frame.size.height;
+    CGRect pickerRect = CGRectMake(0,
+                                   0,
+                                   width,
+                                   height);
+    self.actionPicker = [[UIPickerView alloc] initWithFrame:pickerRect];
+    [self.actionPicker setDataSource:self];
+    [self.actionPicker setDelegate:self];
+    [self.actionContainerView addSubview:self.actionPicker];
+    [self setupTapGestureOnPicker];
 }
 
 #pragma mark Navigation Controller
@@ -193,8 +213,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     {
         ConnectionManager *conn = data;
         NSString *returnData;
-        returnData = [[[NSString alloc] initWithData:conn.returnData encoding:NSASCIIStringEncoding] copy];
-        [self.responseWebView loadHTMLString:returnData baseURL:[NSURL URLWithString:self.currentActionFromStore.baseURL]];
+        returnData = [[[NSString alloc] initWithData:conn.returnData
+                                            encoding:NSASCIIStringEncoding] copy];
+        [self.responseWebView loadHTMLString:returnData
+                                     baseURL:[NSURL URLWithString:self.currentActionFromStore.baseURL]];
     }
     [self refreshwebService];
     [self.actionStore networkActivityIndicatorHide];
@@ -207,6 +229,83 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     NSString *baseURL = self.currentActionFromStore.baseURL;
     self.webService = [[MCWebServiceInterface alloc] initWithURL:baseURL];
     [self.webService setDelegate:self];
+}
+
+#pragma Pickerview Datasource
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+{
+    NSInteger count;
+    NSArray *actions = [MCAction getActions];
+    
+    count = actions.count;
+    
+    return count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView
+             titleForRow:(NSInteger)row
+            forComponent:(NSInteger)component;
+{
+    NSArray *actions = [self.actionStore getActions];
+    
+    MCAction *action = [actions objectAtIndex:row];
+    NSString *actionTitle = action.title;
+    
+    return actionTitle;
+}
+
+- (void)removePicker
+{
+    [self.actionPicker removeGestureRecognizer:self.pickerGesture];
+    [self.actionPicker removeFromSuperview];
+}
+
+#pragma Pickerview Delegate
+
+- (void)setupTapGestureOnPicker
+{
+    self.pickerGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                 action:@selector(pickerTapped:)];
+    [self.pickerGesture setDelegate:self];
+    [self.actionPicker addGestureRecognizer:self.pickerGesture];
+}
+
+- (void)pickerTapped:(UIGestureRecognizer *)gestureRecognizer
+{
+    NSArray *actions = [self.actionStore getActions];
+    MCAction *action = [actions objectAtIndex:self.currentActionPickerRow];
+    [self.actionStore setCurrentAction:action];
+    [self setupCurrentAction];
+    [self removePicker];
+    [self setupResponseTextView];
+    [MCAction saveRecentAction:action];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView
+      didSelectRow:(NSInteger)row
+       inComponent:(NSInteger)component
+{
+    self.currentActionPickerRow = row;
+}
+
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
+shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    if ([gestureRecognizer isKindOfClass:UITapGestureRecognizer.class] &&
+        [otherGestureRecognizer isKindOfClass:UITapGestureRecognizer.class])
+    {
+        return YES;
+    }
+    else
+    {
+        return NO;
+    }
 }
 
 @end

@@ -14,7 +14,6 @@
 @property (nonatomic, strong) NSString *persistentStoreName;
 @property (nonatomic, strong) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (nonatomic, strong) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end
 

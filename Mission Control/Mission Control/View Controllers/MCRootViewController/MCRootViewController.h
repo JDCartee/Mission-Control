@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "MCWebServiceInterface.h"
 
-@interface MCRootViewController : UIViewController <MCWebServiceInterfaceDelegate>
+@interface MCRootViewController : UIViewController
+<MCWebServiceInterfaceDelegate,
+UIPickerViewDataSource,
+UIPickerViewDelegate,
+UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *currentActionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentActionTitleLabel;

@@ -8,15 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import "MCAction.h"
+#import "CoreDataManager.h"
 
 @interface MCActionStore : NSObject
 
 @property (nonatomic, strong) NSMutableArray *actions;
 @property (nonatomic, strong) MCAction *currentAction;
+@property (nonatomic, strong) CoreDataManager *coreDataManager;
 
 + (instancetype)defaultStore;
 
 - (void)networkActivityIndicatorShow;
 - (void)networkActivityIndicatorHide;
+- (void)restoreRecentAction;
+- (NSString *)uuid;
+- (NSArray *)getActions;
 
 @end

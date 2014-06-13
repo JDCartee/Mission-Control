@@ -15,6 +15,8 @@
 
 @interface CoreDataManager : NSObject
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 - (NSArray *)fetchEntity:(NSString *)entityKey
                sortOrder:(int)sort
