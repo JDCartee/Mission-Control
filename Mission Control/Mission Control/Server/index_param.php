@@ -1,6 +1,6 @@
 <html>
 <body>
-<h1>It works!</h1>
+<h1>Mission Control</h1>
 <p>Now lets kick off the python script...</p> 
 <?php
 $output_pre=shell_exec('whoami');
