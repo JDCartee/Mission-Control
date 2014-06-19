@@ -24,6 +24,7 @@
                         URL:(NSString *)url
                parameterKey:(NSString *)key
              parameterValue:(NSString *)value
+                    timeout:(float)timeout
 {
     MCActionStore *store = [MCActionStore defaultStore];
     CoreDataManager *manager = [store coreDataManager];
@@ -35,6 +36,7 @@
     [action setBaseURL:url];
     [action setUrlParameterKey:key];
     [action setUrlParameterValue:value];
+    [action setTimeout:timeout];
     
     return action;
 }

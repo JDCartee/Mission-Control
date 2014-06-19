@@ -46,6 +46,8 @@
 {
     [super viewWillAppear:animated];
     
+    [self setTitle:@"Settings"];
+    
     self.actions = [MCAction getActions];
     
     [self.tableView reloadData];

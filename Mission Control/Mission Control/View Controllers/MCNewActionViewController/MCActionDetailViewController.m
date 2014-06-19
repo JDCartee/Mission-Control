@@ -50,6 +50,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [super viewWillAppear:animated];
+    
+    [self setTitle:@"Action Detail"];
+    
     if (self.mcAction)
     {
         NSString *title = self.mcAction.title;
@@ -97,7 +101,8 @@
                                 ID:actionID
                                URL:url
                       parameterKey:parameterKey
-                    parameterValue:@""];
+                    parameterValue:@""
+                           timeout:70.0];
         }
         
         [actionStore.coreDataManager saveChanges];

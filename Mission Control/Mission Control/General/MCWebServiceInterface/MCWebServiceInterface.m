@@ -23,7 +23,7 @@
                           parameterValue];
         [self setWaitingForResponse:YES];
     
-        [self.connectionManager setConnectionTimeout:40.0];
+        [self.connectionManager setConnectionTimeout:action.timeout];
         [self.connectionManager connectWithGetByAppendingToURL:stringToAppend];
     }
     else

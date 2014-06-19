@@ -99,6 +99,8 @@
 		DF32CDAF19400B90001F0DCE /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = "Mission Control/Database/CoreDataManager/CoreDataManager.m"; sourceTree = SOURCE_ROOT; };
 		DF32CDB319400CB4001F0DCE /* MCAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MCAction.h; path = "Mission Control/Model/Managed Objects/MCAction/MCAction.h"; sourceTree = SOURCE_ROOT; };
 		DF32CDB419400CB4001F0DCE /* MCAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MCAction.m; path = "Mission Control/Model/Managed Objects/MCAction/MCAction.m"; sourceTree = SOURCE_ROOT; };
+		DFB31FA619531C98001D65E7 /* blink_param.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = blink_param.py; path = Server/blink_param.py; sourceTree = "<group>"; };
+		DFB31FA719531C98001D65E7 /* index_param.php */ = {isa = PBXFileReference; lastKnownFileType = text.script.php; name = index_param.php; path = Server/index_param.php; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				DF32CD7A193F98CF001F0DCE /* General */,
 				DF32CD87193F98CF001F0DCE /* Model */,
 				DF32CD8E193F98CF001F0DCE /* View Controllers */,
+				DFB31FA519531C30001D65E7 /* Server */,
 				DF32CD56193F985B001F0DCE /* MCAppDelegate.h */,
 				DF32CD57193F985B001F0DCE /* MCAppDelegate.m */,
 				DF32CD5C193F985B001F0DCE /* Images.xcassets */,
@@ -340,6 +343,15 @@
 				DF32CD88193F98CF001F0DCE /* MCAction */,
 			);
 			name = "Managed Objects";
+			sourceTree = "<group>";
+		};
+		DFB31FA519531C30001D65E7 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				DFB31FA619531C98001D65E7 /* blink_param.py */,
+				DFB31FA719531C98001D65E7 /* index_param.php */,
+			);
+			name = Server;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

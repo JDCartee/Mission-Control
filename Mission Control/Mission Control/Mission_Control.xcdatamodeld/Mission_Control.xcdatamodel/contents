@@ -3,11 +3,12 @@
     <entity name="MCAction" representedClassName="MCAction" syncable="YES">
         <attribute name="actionID" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="baseURL" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeout" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="urlParameterKey" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="urlParameterValue" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MCAction" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="MCAction" positionX="-63" positionY="-18" width="128" height="135"/>
     </elements>
 </model>

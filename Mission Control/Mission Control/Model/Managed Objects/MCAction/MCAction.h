@@ -17,12 +17,14 @@
 @property (nonatomic, retain) NSString * baseURL;
 @property (nonatomic, retain) NSString * urlParameterKey;
 @property (nonatomic, retain) NSString * urlParameterValue;
+@property (nonatomic) float timeout;
 
-+ (MCAction *)createAction:(NSString *)title
-                        ID:(NSString *)actionID
-                       URL:(NSString *)url
-              parameterKey:(NSString *)key
-            parameterValue:(NSString *)value;
++ (MCAction *) createAction:(NSString *)title
+                         ID:(NSString *)actionID
+                        URL:(NSString *)url
+               parameterKey:(NSString *)key
+             parameterValue:(NSString *)value
+                    timeout:(float)timeout;
 + (NSArray *)getActions;
 + (MCAction *)getRecentAction;
 + (void)saveRecentAction:(MCAction *)action;

@@ -20,9 +20,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 @interface MCRootViewController ()
 
 @property (nonatomic, strong) MCActionStore *actionStore;
+
 // Making this weak because the store singleton will ultimately retain this object.
 // No need to own it here.
 @property (nonatomic, weak) MCAction *currentActionFromStore;
+
 @property (nonatomic, strong) MCWebServiceInterface *webService;
 @property (nonatomic, strong) UIWebView *responseWebView;
 
@@ -50,14 +52,24 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     [self setupNavBarButtons];
     [self setupCurrentAction];
     [self setupActionSlider];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    [self setupResponseTextView];
+    [self setTitle:@"Mission Control"];
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
-    [self setupResponseTextView];
+    [super viewDidAppear:animated];
+    
     if (self.currentActionFromStore)
     {
         [self setupCurrentAction];
@@ -79,6 +91,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 {
     [self.actionPicker removeFromSuperview];
     [self.responseWebView removeFromSuperview];
+    self.responseWebView = nil;
     float width = self.actionContainerView.frame.size.width;
     float height = self.actionContainerView.frame.size.height;
     CGRect pickerRect = CGRectMake(0,
@@ -90,6 +103,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.actionPicker setDelegate:self];
     [self.actionContainerView addSubview:self.actionPicker];
     [self setupTapGestureOnPicker];
+    [self selectCurrentAction];
 }
 
 #pragma mark Navigation Controller
@@ -141,12 +155,12 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
                                          animated:YES];
 }
 
-#pragma Current Action
+#pragma mark Current Action
 
 - (void)setupCurrentAction
 {
     NSString *value;
-    self.currentActionFromStore = self.actionStore.currentAction;
+    [self setCurrentActionFromStore:self.actionStore.currentAction ];
     if (self.currentActionFromStore)
     {
         value = self.currentActionFromStore.urlParameterValue;
@@ -231,14 +245,15 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.webService setDelegate:self];
 }
 
-#pragma Pickerview Datasource
+#pragma mark Pickerview Datasource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 {
     return 1;
 }
 
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component;
+- (NSInteger)pickerView:(UIPickerView *)pickerView
+numberOfRowsInComponent:(NSInteger)component;
 {
     NSInteger count;
     NSArray *actions = [MCAction getActions];
@@ -266,7 +281,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.actionPicker removeFromSuperview];
 }
 
-#pragma Pickerview Delegate
+#pragma mark Pickerview Delegate
 
 - (void)setupTapGestureOnPicker
 {
@@ -278,13 +293,8 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (void)pickerTapped:(UIGestureRecognizer *)gestureRecognizer
 {
-    NSArray *actions = [self.actionStore getActions];
-    MCAction *action = [actions objectAtIndex:self.currentActionPickerRow];
-    [self.actionStore setCurrentAction:action];
-    [self setupCurrentAction];
     [self removePicker];
     [self setupResponseTextView];
-    [MCAction saveRecentAction:action];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView
@@ -292,6 +302,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
        inComponent:(NSInteger)component
 {
     self.currentActionPickerRow = row;
+    NSArray *actions = [self.actionStore getActions];
+    MCAction *action = [actions objectAtIndex:self.currentActionPickerRow];
+    [self.actionStore setCurrentAction:action];
+    [self setupCurrentAction];
+    [MCAction saveRecentAction:action];
 }
 
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
@@ -306,6 +321,18 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     {
         return NO;
     }
+}
+
+- (void)selectCurrentAction
+{
+    MCAction *action = self.currentActionFromStore;
+    NSArray *actions = self.actionStore.actions;
+    
+    NSInteger row = [actions indexOfObject:action];
+    
+    [self.actionPicker selectRow:row
+                     inComponent:0
+                        animated:NO];
 }
 
 @end
