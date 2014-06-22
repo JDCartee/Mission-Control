@@ -21,9 +21,10 @@ parameter name = key
 parameter value = 50
 
 The PHP script reflected in this example is charged with initiating the defined Python
-script and passing it the key/value pair. The python script can be modified to interpret
-the key/value pair as needed. In the current example it is simply a counter to determine 
-how many times to run through a loop turning GPIO pins on and off to flash LEDs.
+script (within the PHP page) and passing it the key/value pair. The python script can be
+modified to interpret the key/value pair as needed. In the current example it is simply a 
+counter to determine how many times to run through a loop turning GPIO pins on and off to 
+flash LEDs.
 
 Look in Mission Control/Server for the PHP page (index_param.php) and 
 Python script example (blink_param.py) for example GPIO control. 
