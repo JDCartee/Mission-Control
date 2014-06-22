@@ -80,6 +80,8 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 - (IBAction)submitButton:(id)sender
 {
+    [self removePicker];
+    [self setupResponseTextView];
     [self.responseWebView loadHTMLString:nil
                                  baseURL:nil];
     [self.actionStore networkActivityIndicatorShow];

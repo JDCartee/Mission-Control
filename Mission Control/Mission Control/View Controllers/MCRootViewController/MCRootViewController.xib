@@ -71,14 +71,14 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="CVH-l4-4XB" secondAttribute="bottom" constant="20" symbolic="YES" id="3Lw-at-lkF"/>
+                <constraint firstAttribute="bottom" secondItem="CVH-l4-4XB" secondAttribute="bottom" constant="20" id="3Lw-at-lkF"/>
                 <constraint firstItem="lLf-52-A1A" firstAttribute="leading" secondItem="1Wv-BH-i91" secondAttribute="leading" id="9yo-tk-Fhs"/>
                 <constraint firstItem="Io2-VS-eCM" firstAttribute="leading" secondItem="eDh-DN-sy3" secondAttribute="leading" id="B6u-tr-uhs"/>
                 <constraint firstItem="lLf-52-A1A" firstAttribute="top" secondItem="1Wv-BH-i91" secondAttribute="bottom" constant="8" symbolic="YES" id="EUv-hc-tcm"/>
                 <constraint firstItem="lLf-52-A1A" firstAttribute="leading" secondItem="bQA-hx-a4P" secondAttribute="leading" id="KOv-aS-Rbi"/>
-                <constraint firstItem="Io2-VS-eCM" firstAttribute="top" secondItem="eDh-DN-sy3" secondAttribute="bottom" constant="8" symbolic="YES" id="KPn-YI-iJc"/>
+                <constraint firstItem="Io2-VS-eCM" firstAttribute="top" secondItem="eDh-DN-sy3" secondAttribute="bottom" constant="8" id="KPn-YI-iJc"/>
                 <constraint firstItem="1Wv-BH-i91" firstAttribute="leading" secondItem="yjo-KM-BUb" secondAttribute="leading" id="OfJ-MC-L5U"/>
-                <constraint firstItem="eDh-DN-sy3" firstAttribute="top" secondItem="bQA-hx-a4P" secondAttribute="bottom" constant="8" symbolic="YES" id="Qgp-CR-wHl"/>
+                <constraint firstItem="eDh-DN-sy3" firstAttribute="top" secondItem="bQA-hx-a4P" secondAttribute="bottom" constant="8" id="Qgp-CR-wHl"/>
                 <constraint firstItem="Io2-VS-eCM" firstAttribute="leading" secondItem="CVH-l4-4XB" secondAttribute="leading" id="SaM-ze-Fvx"/>
                 <constraint firstItem="eDh-DN-sy3" firstAttribute="trailing" secondItem="Io2-VS-eCM" secondAttribute="trailing" id="TKX-lR-8aR"/>
                 <constraint firstItem="1Wv-BH-i91" firstAttribute="trailing" secondItem="lLf-52-A1A" secondAttribute="trailing" id="U85-GD-PfP"/>
@@ -91,7 +91,7 @@
                 <constraint firstItem="Io2-VS-eCM" firstAttribute="trailing" secondItem="CVH-l4-4XB" secondAttribute="trailing" id="mkG-6y-fT9"/>
                 <constraint firstItem="yjo-KM-BUb" firstAttribute="trailing" secondItem="1Wv-BH-i91" secondAttribute="trailing" id="p16-m5-a2G"/>
                 <constraint firstItem="1Wv-BH-i91" firstAttribute="top" secondItem="yjo-KM-BUb" secondAttribute="bottom" constant="8" symbolic="YES" id="q0Q-6Y-UnY"/>
-                <constraint firstItem="CVH-l4-4XB" firstAttribute="top" secondItem="Io2-VS-eCM" secondAttribute="bottom" constant="8" symbolic="YES" id="r6Q-Qa-Vaa"/>
+                <constraint firstItem="CVH-l4-4XB" firstAttribute="top" secondItem="Io2-VS-eCM" secondAttribute="bottom" constant="8" id="r6Q-Qa-Vaa"/>
                 <constraint firstItem="bQA-hx-a4P" firstAttribute="top" secondItem="lLf-52-A1A" secondAttribute="bottom" constant="8" symbolic="YES" id="s0h-M5-qWf"/>
             </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>

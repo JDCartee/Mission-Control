@@ -18,6 +18,7 @@
 @dynamic baseURL;
 @dynamic urlParameterKey;
 @dynamic urlParameterValue;
+@dynamic timeout;
 
 + (MCAction *) createAction:(NSString *)title
                          ID:(NSString *)actionID

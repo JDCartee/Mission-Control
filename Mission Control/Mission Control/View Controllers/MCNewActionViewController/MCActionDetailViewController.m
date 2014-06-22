@@ -45,7 +45,6 @@
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = self.saveActionButton;
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -64,12 +63,6 @@
         [self.urlTextField setText:url];
         [self.parameterKeyTextField setText:key];
     }
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)saveAction
