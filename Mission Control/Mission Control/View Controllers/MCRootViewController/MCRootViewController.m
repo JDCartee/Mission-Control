@@ -81,7 +81,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 {
     [super viewWillAppear:animated];
     
-    [self setupResponseTextView];
+    [self setupResponseWebView];
     [self setTitle:@"Mission Control"];
 }
 
@@ -103,10 +103,17 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark IBActions
 
+/**
+ Submit action button to initiate the defined service call action
+ @brief Submit the current action
+ @param sender
+    id - button
+ @returns IBaction
+ */
 - (IBAction)submitButton:(id)sender
 {
     [self removePicker];
-    [self setupResponseTextView];
+    [self setupResponseWebView];
     [self.responseWebView loadHTMLString:nil
                                  baseURL:nil];
     [self.actionStore networkActivityIndicatorShow];
@@ -114,6 +121,13 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.webService submitAction:self.currentActionFromStore];
 }
 
+/**
+ Sets up the action picker to allow the user to choose and action
+ @brief Choose an action
+ @param sender
+    id - button
+ @returns IBAction
+ */
 - (IBAction)chooseAnActionButton:(id)sender
 {
     [self.actionPicker removeFromSuperview];
@@ -135,6 +149,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark Navigation Controller
 
+/**
+ Set up the nav bar buttons for the root view controller
+ @brief Set up nav bar buttons
+ */
 - (void)setupNavBarButtons
 {
     UIBarButtonItem *settingsButton;
@@ -142,6 +160,12 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.navigationItem setRightBarButtonItem:settingsButton];
 }
 
+/**
+ Settings bar button for creating and modifying actions
+ @brief Settings bar button
+ @returns settingsButton
+    UIBarButton
+ */
 - (UIBarButtonItem *)settingsButton
 {
     UIButton *barButton;
@@ -173,6 +197,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     return settingsButton;
 }
 
+/**
+ Selector for settings button to bring up the settings view controller for creatings and 
+ modifying actions
+ @brief Selector for settings button
+ */
 - (void)openSettings
 {
     MCSettingsViewController *settings;
@@ -184,6 +213,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark Current Action
 
+/**
+ Get the current action from the action store and set it up on the root view controller
+ @brief Set up the current action
+ */
 - (void)setupCurrentAction
 {
     NSString *value;
@@ -216,6 +249,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark Slider
 
+/**
+ Set up action slider to capture action values
+ @brief Set up action slider
+ */
 - (void)setupActionSlider
 {
     [self.actionValueSlider addTarget:self
@@ -223,6 +260,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
                      forControlEvents:UIControlEventValueChanged];
 }
 
+/**
+ Action slider change selector for modifying the curent action value
+ @brief Action slider change selector
+ */
 - (void)updateActionValue
 {
     NSString *valueString = [NSString stringWithFormat:@"%d",
@@ -236,7 +277,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark Response Text View
 
-- (void)setupResponseTextView
+/**
+ Set up the response web view to display the result of service calls
+ @brief Set up the response web view
+ */
+- (void)setupResponseWebView
 {
     CGRect webViewFrame = CGRectMake(0,
                                      0,
@@ -248,6 +293,12 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 #pragma mark Web Service
 
+/**
+ Present the returned data in the response web view.
+ @brief Present returned data
+ @param data
+    id - returned data
+ */
 - (void)returnData:(id)data
 {
     if (data)
@@ -264,6 +315,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self.submitButton setEnabled:YES];
 }
 
+/**
+ Refresh the web service object
+ @brief  Refresh the web service object
+ */
 - (void)refreshwebService
 {
     self.webService = nil;
@@ -273,12 +328,28 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 }
 
 #pragma mark Pickerview Datasource
-
+/**
+ Sets up the number of components in the action picker view
+ @brief Number of action picker components
+ @param pickerView
+    UIPickerView - action picker view
+ @returns NSInteger
+ */
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView;
 {
     return 1;
 }
 
+/**
+ Number of action rows in the action picker
+ @brief Number of actions
+ @param pickerView
+    UIPickerView - Action picker view
+ @param component
+    NSInteger - component number
+ @returns count
+    NSInteger - Number of actions
+ */
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component;
 {
@@ -290,6 +361,18 @@ numberOfRowsInComponent:(NSInteger)component;
     return count;
 }
 
+/**
+ Title for action picker view row
+ @brief Title for action picker view row
+ @param pickerView
+    UIPickerView - Action picker
+ @param row
+    NSInteger - Action picker view row
+ @param component
+    NSInteger - components
+ @returns actionTitle
+    NSString - Row title
+ */
 - (NSString *)pickerView:(UIPickerView *)pickerView
              titleForRow:(NSInteger)row
             forComponent:(NSInteger)component;
@@ -302,6 +385,10 @@ numberOfRowsInComponent:(NSInteger)component;
     return actionTitle;
 }
 
+/**
+ Remove the action picker
+ @brief Remove the action picker
+ */
 - (void)removePicker
 {
     [self.actionPicker removeGestureRecognizer:self.pickerGesture];
@@ -310,6 +397,10 @@ numberOfRowsInComponent:(NSInteger)component;
 
 #pragma mark Pickerview Delegate
 
+/**
+ Set up the tap gesture recognizer on the action picker for selecting an action
+ @brief Set up the tap gesture recognizer on the action picker
+ */
 - (void)setupTapGestureOnPicker
 {
     self.pickerGesture = [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -318,12 +409,28 @@ numberOfRowsInComponent:(NSInteger)component;
     [self.actionPicker addGestureRecognizer:self.pickerGesture];
 }
 
+/**
+ Tap gesture recognizer selector for the action picker view
+ @brief Tap gesture recognizer selector for the action picker view
+ @param gestureRecognizer
+    UIGestureRecognizer - tap gesture recognizer
+ */
 - (void)pickerTapped:(UIGestureRecognizer *)gestureRecognizer
 {
     [self removePicker];
-    [self setupResponseTextView];
+    [self setupResponseWebView];
 }
 
+/**
+ Picker view did select action row
+ @brief Did select action row
+ @param pickerView
+    UIPickerView - Action picker
+ @param row
+    NSInteger - Action picker view row
+ @param component
+    NSInteger - components
+ */
 - (void)pickerView:(UIPickerView *)pickerView
       didSelectRow:(NSInteger)row
        inComponent:(NSInteger)component
@@ -336,6 +443,15 @@ numberOfRowsInComponent:(NSInteger)component;
     [MCAction saveRecentAction:action];
 }
 
+/**
+ Should recognize simultaneous gesture recognizers
+ @brief Should recognize simultaneous gesture recognizers
+ @param gestureRecognizer
+    UIGestureRecognizer - gesture recognizer
+ @param otherGestureRecognizer
+    UIGestureRecognizer - other gesture recognizer
+ @returns BOOL - should recognize simultaneous gestures
+ */
 -(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer
 shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
 {
@@ -350,6 +466,10 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     }
 }
 
+/**
+ Select the current action in the action picker
+ @brief Select the current action
+ */
 - (void)selectCurrentAction
 {
     MCAction *action = self.currentActionFromStore;
