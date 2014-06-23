@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define Connection_Error @"connectionError"
-#define Process_Connection_Data @"processConnectionData"
+static NSString *connection_Error = @"connectionError";
+static NSString *process_Connection_Data = @"processConnectionData";
 
 @interface ConnectionManager : NSObject
 

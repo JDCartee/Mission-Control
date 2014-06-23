@@ -36,7 +36,7 @@
         NSString *path = [FileHelper pathInLibraryDirectory:file];
         NSURL *storeURL = [NSURL fileURLWithPath:path];
         
-        NSError *error = nil;
+        NSError *error;
         
         NSPersistentStore *persistentStore;
         persistentStore = [self.persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
@@ -209,7 +209,7 @@
 
 - (BOOL)saveChanges
 {
-    NSError *err = nil;
+    NSError *err;
     
     BOOL successful = [self.managedObjectContext save:&err];
     

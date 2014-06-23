@@ -9,9 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "FileHelper.h"
 
-#define sortNone          0
-#define sortAscending     1
-#define sortDescending    2
+enum
+{
+    sortNone = 0,
+    sortAscending = 1,
+    sortDescending = 2
+};
+
 
 @interface CoreDataManager : NSObject
 

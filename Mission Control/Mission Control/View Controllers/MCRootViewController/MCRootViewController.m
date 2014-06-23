@@ -321,7 +321,6 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
  */
 - (void)refreshwebService
 {
-    self.webService = nil;
     NSString *baseURL = self.currentActionFromStore.baseURL;
     self.webService = [[MCWebServiceInterface alloc] initWithURL:baseURL];
     [self.webService setDelegate:self];

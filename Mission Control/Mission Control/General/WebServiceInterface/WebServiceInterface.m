@@ -10,8 +10,6 @@
 
 @implementation WebServiceInterface
 
-@synthesize connectionManager = _connectionManager;
-
 - (id)init
 {
     return [self initWithURL:@""];
@@ -25,11 +23,11 @@
         _connectionManager = [[ConnectionManager alloc] initWithURL:url];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(processReturnedData:)
-                                                     name:Process_Connection_Data
+                                                     name:process_Connection_Data
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(connectionError:)
-                                                     name:Connection_Error
+                                                     name:connection_Error
                                                    object:nil];
     }
     return self;

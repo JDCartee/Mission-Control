@@ -48,12 +48,10 @@ const float defaultTimeout =        10.0f;
             [request addValue:header
            forHTTPHeaderField:aKey];
         }
-        enumerator = nil;
         NSData *bodyData = [body dataUsingEncoding:NSUTF8StringEncoding];
         [request setHTTPMethod:@"GET"];
         [request setHTTPBody:bodyData];
         [request setHTTPShouldHandleCookies:NO];
-        bodyData = nil;
         return request;
     }
     else
@@ -75,7 +73,6 @@ const float defaultTimeout =        10.0f;
                                                      delegate:self
                                              startImmediately:YES];
     }
-    request = nil;
 }
 
 - (void)connectWithGetByAppendingToURL:(NSString *)urlSuffix
@@ -112,7 +109,7 @@ const float defaultTimeout =        10.0f;
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
-    [[NSNotificationCenter defaultCenter] postNotificationName:Process_Connection_Data
+    [[NSNotificationCenter defaultCenter] postNotificationName:process_Connection_Data
                                                         object:self
                                                       userInfo:nil];
     conn = nil;
@@ -121,7 +118,7 @@ const float defaultTimeout =        10.0f;
 - (void)connection:(NSURLConnection *)conn
   didFailWithError:(NSError *)error
 {    
-    [[NSNotificationCenter defaultCenter] postNotificationName:Connection_Error
+    [[NSNotificationCenter defaultCenter] postNotificationName:connection_Error
                                                         object:self
                                                       userInfo:nil];
     self.returnData = nil;

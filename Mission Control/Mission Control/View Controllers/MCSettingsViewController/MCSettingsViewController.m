@@ -15,31 +15,20 @@
 @interface MCSettingsViewController ()
 
 @property (nonatomic, strong) NSArray *actions;
-@property (nonatomic, strong) UIBarButtonItem *addActionButton;
 
 @end
 
 @implementation MCSettingsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self)
-    {
-        
-        self.addActionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                             target:self
-                                                                             action:@selector(addAction)];
-    }
-    
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.navigationItem.rightBarButtonItem = self.addActionButton;
+    UIBarButtonItem *addActionButton;
+    addActionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                    target:self
+                                                                    action:@selector(addAction)];
+    self.navigationItem.rightBarButtonItem = addActionButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated

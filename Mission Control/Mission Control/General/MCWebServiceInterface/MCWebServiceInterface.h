@@ -18,7 +18,7 @@
 
 @interface MCWebServiceInterface : WebServiceInterface
 
-@property (nonatomic, weak) id delegate;
+@property (nonatomic, weak) id <MCWebServiceInterfaceDelegate> delegate;
 @property (nonatomic) BOOL waitingForResponse;
 
 - (void)submitAction:(MCAction *)action;

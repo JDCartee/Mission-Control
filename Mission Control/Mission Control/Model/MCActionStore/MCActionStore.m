@@ -28,7 +28,7 @@ static MCActionStore *_mainInstance;
 + (instancetype)defaultStore
 {
     static dispatch_once_t once;
-    if (_mainInstance == nil)
+    if (!_mainInstance)
     {
         dispatch_once(&once, ^
         {
@@ -83,7 +83,6 @@ static MCActionStore *_mainInstance;
 {
     NSArray *databaseActions = [MCAction getActions];
     self.actions = [[NSArray arrayWithArray:databaseActions] copy];
-    databaseActions = nil;
     return  self.actions;
 }
 
