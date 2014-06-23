@@ -36,6 +36,15 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 
 @implementation MCRootViewController
 
+/**
+ Default initilizer for the root view controller
+ @param nibNameOrNil
+    NSString - Nib name
+ @param nibBundleOrNil
+    NSBundle - Nib bundle
+ @returns self
+    id - self
+ */
 - (id)initWithNibName:(NSString *)nibNameOrNil
                bundle:(NSBundle *)nibBundleOrNil
 {
@@ -49,6 +58,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     return self;
 }
 
+/**
+ View load sets up nav bar, current action, and the action slider
+ @brief View load
+ */
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -58,6 +71,12 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self setupActionSlider];
 }
 
+/**
+ View will appear sets up response web view and title
+ @brief View will appear
+ @param animated
+    BOOL - animate
+ */
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -66,6 +85,12 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self setTitle:@"Mission Control"];
 }
 
+/**
+ View did appear sets up current action
+ @brief View did appear
+ @param animated
+    BOOL - animate
+ */
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
