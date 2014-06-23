@@ -28,3 +28,5 @@ flash LEDs.
 
 Look in Mission Control/Server for the PHP page (index_param.php) and 
 Python script example (blink_param.py) for example GPIO control. 
+
+https://www.youtube.com/watch?v=IP-szuon2Bk
