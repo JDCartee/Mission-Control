@@ -29,4 +29,8 @@ flash LEDs.
 Look in Mission Control/Server for the PHP page (index_param.php) and 
 Python script example (blink_param.py) for example GPIO control. 
 
+Look in Mission Control/Raspberry Pi for pinout diagrams and schematics that will help you
+build the GPIO example circuit referenced in this project. The following instructional 
+video was the inspiration for this project...
+
 https://www.youtube.com/watch?v=IP-szuon2Bk
