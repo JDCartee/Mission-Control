@@ -15,10 +15,23 @@
 @interface MCSettingsViewController ()
 
 @property (nonatomic, strong) NSArray *actions;
+@property (nonatomic, strong) MCActionStore *actionStore;
 
 @end
 
 @implementation MCSettingsViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil
+               bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil
+                           bundle:nibBundleOrNil];
+    if (self)
+    {
+        self.actionStore = [MCActionStore defaultStore];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -45,11 +58,18 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section;
 {
-    int count = 0;
+    NSUInteger count = 0;
     
     if (self.actions)
     {
         count = self.actions.count;
+    }
+    
+    if (count == 0)
+    {
+        [MCAction saveRecentAction:nil];
+        [self.actionStore setCurrentAction:nil];
+        self.actions = [self.actionStore getActions];
     }
     
     return count;

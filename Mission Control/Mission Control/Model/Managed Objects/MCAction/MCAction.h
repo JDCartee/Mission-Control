@@ -28,5 +28,6 @@
 + (NSArray *)getActions;
 + (MCAction *)getRecentAction;
 + (void)saveRecentAction:(MCAction *)action;
++ (void)deleteAction:(NSString *)actionID;
 
 @end

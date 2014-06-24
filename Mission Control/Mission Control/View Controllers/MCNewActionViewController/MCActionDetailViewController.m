@@ -11,7 +11,7 @@
 
 @interface MCActionDetailViewController ()
 
-@property (nonatomic, strong) UIBarButtonItem *saveActionButton;
+@property (nonatomic, strong) MCActionStore *actionStore;
 
 @end
 
@@ -23,9 +23,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self)
     {
-        self.saveActionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
-                                                                              target:self
-                                                                              action:@selector(saveAction)];
+        self.actionStore = [MCActionStore defaultStore];
     }
     return self;
 }
@@ -40,11 +38,35 @@
     return self;
 }
 
+- (IBAction)deleteAction:(id)sender
+{
+    MCActionStore *actionStore = [MCActionStore defaultStore];
+    if (self.mcAction)
+    {
+        MCAction *action = self.actionStore.currentAction;
+        if ([action.actionID isEqualToString:self.mcAction.actionID])
+        {
+            [self.actionStore setCurrentAction:nil];
+            [MCAction saveRecentAction:nil];
+        }
+        
+        [MCAction deleteAction:self.mcAction.actionID];
+        [actionStore.coreDataManager saveChanges];
+        [self.navigationController popViewControllerAnimated:YES];
+        
+        
+        
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.navigationItem.rightBarButtonItem = self.saveActionButton;
+    UIBarButtonItem *saveActionButton;
+    saveActionButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                     target:self
+                                                                     action:@selector(saveAction)];
+    [self.navigationItem setRightBarButtonItem:saveActionButton];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -67,8 +89,6 @@
 
 - (void)saveAction
 {
-    MCActionStore *actionStore = [MCActionStore defaultStore];
-    
     NSString *title;
     title = [self.titleTextField.text isEqualToString:@""] ? nil : self.titleTextField.text;
     NSString *url;
@@ -76,7 +96,7 @@
     NSString *parameterKey;
     parameterKey = [self.parameterKeyTextField.text isEqualToString:@""] ? nil : self.parameterKeyTextField.text;
     NSString *actionID;
-    actionID = self.mcAction.actionID ? self.mcAction.actionID : [actionStore uuid];
+    actionID = self.mcAction.actionID ? self.mcAction.actionID : [self.actionStore uuid];
     
     if (title &&
         url &&
@@ -98,7 +118,7 @@
                            timeout:70.0];
         }
         
-        [actionStore.coreDataManager saveChanges];
+        [self.actionStore.coreDataManager saveChanges];
     }
     
     [self.navigationController popViewControllerAnimated:YES];

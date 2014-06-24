@@ -111,6 +111,11 @@
         [standardDefaults setObject:action.actionID
                              forKey:MCActionRecentActionID];
     }
+    else if (!action)
+    {
+        [standardDefaults setObject:@""
+                             forKey:MCActionRecentActionID];
+    }
     
     [standardDefaults synchronize];
 }

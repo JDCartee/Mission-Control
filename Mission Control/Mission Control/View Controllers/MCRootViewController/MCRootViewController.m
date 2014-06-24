@@ -81,8 +81,9 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 {
     [super viewWillAppear:animated];
     
-    [self setupResponseWebView];
     [self setTitle:@"Mission Control"];
+    
+    [self.actionStore getActions];
 }
 
 /**
@@ -99,6 +100,10 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     {
         [self setupCurrentAction];
     }
+    else
+    {
+        [self removeCurrentAction];
+    }
 }
 
 #pragma mark IBActions
@@ -110,7 +115,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     id - button
  @returns IBaction
  */
-- (IBAction)submitButton:(id)sender
+- (IBAction)submit:(id)sender
 {
     [self removePicker];
     [self setupResponseWebView];
@@ -118,6 +123,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
                                  baseURL:nil];
     [self.actionStore networkActivityIndicatorShow];
     [self.submitButton setEnabled:NO];
+    [self.chooseAnActionButton setEnabled:NO];
     [self.webService submitAction:self.currentActionFromStore];
 }
 
@@ -128,23 +134,28 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     id - button
  @returns IBAction
  */
-- (IBAction)chooseAnActionButton:(id)sender
+- (IBAction)chooseAnAction:(id)sender
 {
     [self.actionPicker removeFromSuperview];
     [self.responseWebView removeFromSuperview];
-    self.responseWebView = nil;
-    float width = self.actionContainerView.frame.size.width;
-    float height = self.actionContainerView.frame.size.height;
-    CGRect pickerRect = CGRectMake(0,
-                                   0,
-                                   width,
-                                   height);
-    self.actionPicker = [[UIPickerView alloc] initWithFrame:pickerRect];
-    [self.actionPicker setDataSource:self];
-    [self.actionPicker setDelegate:self];
-    [self.actionContainerView addSubview:self.actionPicker];
-    [self setupTapGestureOnPicker];
-    [self selectCurrentAction];
+    
+    if (self.actionStore.actions &&
+        self.actionStore.actions.count > 0)
+    {
+        float width = self.actionContainerView.frame.size.width;
+        float height = self.actionContainerView.frame.size.height;
+        CGRect pickerRect = CGRectMake(0,
+                                       0,
+                                       width,
+                                       height);
+        self.actionPicker = [[UIPickerView alloc] initWithFrame:pickerRect];
+        [self.actionPicker setDataSource:self];
+        [self.actionPicker setDelegate:self];
+        [self.actionContainerView addSubview:self.actionPicker];
+        [self setupTapGestureOnPicker];
+        [self selectCurrentAction];
+    }
+    
 }
 
 #pragma mark Navigation Controller
@@ -220,7 +231,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 - (void)setupCurrentAction
 {
     NSString *value;
-    [self setCurrentActionFromStore:self.actionStore.currentAction ];
+    [self setCurrentActionFromStore:self.actionStore.currentAction];
     if (self.currentActionFromStore)
     {
         value = self.currentActionFromStore.urlParameterValue;
@@ -247,6 +258,19 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self refreshwebService];
 }
 
+/**
+ Removes the current action from the root view
+ @brief Remove the current action
+ */
+- (void)removeCurrentAction
+{
+    [self setCurrentActionFromStore:nil];
+    [self updateActionValue];
+    [self.currentActionTitleLabel setText:@""];
+    [self.currentActionLabel setText:@""];
+    [self.responseWebView removeFromSuperview];
+}
+
 #pragma mark Slider
 
 /**
@@ -271,7 +295,11 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     NSString *valueLabelString = [NSString stringWithFormat:@"Value: %@",
                                   valueString];
     
-    [self.currentActionFromStore setUrlParameterValue:valueString];
+    if (self.currentActionFromStore)
+    {
+        [self.currentActionFromStore setUrlParameterValue:valueString];
+    }
+    
     [self.actionValueSliderTitleLabel setText:valueLabelString];
 }
 
@@ -287,6 +315,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
                                      0,
                                      self.actionContainerView.frame.size.width,
                                      self.actionContainerView.frame.size.height);
+    [self.responseWebView removeFromSuperview];
     self.responseWebView = [[UIWebView alloc] initWithFrame:webViewFrame];
     [self.actionContainerView addSubview:self.responseWebView];
 }
@@ -313,6 +342,7 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
     [self refreshwebService];
     [self.actionStore networkActivityIndicatorHide];
     [self.submitButton setEnabled:YES];
+    [self.chooseAnActionButton setEnabled:YES];
 }
 
 /**
@@ -352,10 +382,13 @@ const float navigationItemSettingsButtonFontSize =              36.0f;
 - (NSInteger)pickerView:(UIPickerView *)pickerView
 numberOfRowsInComponent:(NSInteger)component;
 {
-    NSInteger count;
+    NSInteger count = 0;
     NSArray *actions = [MCAction getActions];
     
-    count = actions.count;
+    if (actions)
+    {
+        count = actions.count;
+    }
     
     return count;
 }
@@ -377,9 +410,13 @@ numberOfRowsInComponent:(NSInteger)component;
             forComponent:(NSInteger)component;
 {
     NSArray *actions = [self.actionStore getActions];
+    NSString *actionTitle = @"";
     
-    MCAction *action = [actions objectAtIndex:row];
-    NSString *actionTitle = action.title;
+    if (actions)
+    {
+        MCAction *action = [actions objectAtIndex:row];
+        actionTitle = action.title;
+    }
     
     return actionTitle;
 }
@@ -474,11 +511,22 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
     MCAction *action = self.currentActionFromStore;
     NSArray *actions = self.actionStore.actions;
     
-    NSInteger row = [actions indexOfObject:action];
+    NSInteger row = 0;
     
-    [self.actionPicker selectRow:row
-                     inComponent:0
-                        animated:NO];
+    if (action)
+    {
+        row = [actions indexOfObject:action];
+    }
+
+    if (actions)
+    {
+        [self.actionPicker selectRow:row
+                         inComponent:0
+                            animated:NO];
+        [self pickerView:self.actionPicker
+            didSelectRow:row
+             inComponent:0];
+    }
 }
 
 @end

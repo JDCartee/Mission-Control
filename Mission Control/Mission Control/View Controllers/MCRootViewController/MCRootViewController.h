@@ -39,8 +39,12 @@ UIGestureRecognizerDelegate>
  Submit button for initiating current action
  */
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+/**
+ Button for choosing the current action
+ */
+@property (weak, nonatomic) IBOutlet UIButton *chooseAnActionButton;
 
-- (IBAction)submitButton:(id)sender;
-- (IBAction)chooseAnActionButton:(id)sender;
+- (IBAction)submit:(id)sender;
+- (IBAction)chooseAnAction:(id)sender;
 
 @end

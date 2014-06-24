@@ -18,5 +18,6 @@
 @property (nonatomic, strong) MCAction *mcAction;
 
 - (id)initWithAction:(MCAction *)action;
+- (IBAction)deleteAction:(id)sender;
 
 @end
